@@ -46,7 +46,7 @@
 	writeToDocument("Unique words " + unique.length)
 
 	// Print the most common words
-	writeToDocument("Common words")
+	writeToDocument("<br> Common words")
 	for (var i = 0; i < 30 && i < unique.length; ++i)
 		writeToDocument(i + 1 + ": \t" + unique[i].word)
 
@@ -82,7 +82,7 @@
 	unique.sort(function(a, b) { return b.count - a.count })
 
 	// Print the most common
-	writeToDocument("Common clusters")
+	writeToDocument("<br> Common clusters")
 	for (var i = 0; i < 30 && i < unique.length; ++i)
 		writeToDocument(i + 1 + ": \t" + unique[i].word + "(" + unique[i].count + ")")
 
