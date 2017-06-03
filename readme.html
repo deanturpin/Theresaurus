@@ -1,16 +1,17 @@
 <meta charset="UTF-8">
 
+<!-- The speech -->
+<script src="speech.js"></script>
+
 <script type="text/javascript">
-
-	console.log(Date())
-
-	const fulltext= "A little over six months ago, the British people voted for change. They voted to shape a brighter future for our country. They voted to leave the European Union and embrace the world. And they did so with their eyes open: accepting that the road ahead will be uncertain at times, but believing that it leads towards a brighter future for their children - and their grandchildren too. And it is the job of this Government to deliver it. That means more than negotiating our new relationship with the EU. It means taking the opportunity of this great moment of national change to step back and ask ourselves what kind of country we want to be. My answer is clear. I want this United Kingdom to emerge from this period of change stronger, fairer, more united and more outward-looking than ever before. I want us to be a secure, prosperous, tolerant country - a magnet for international talent and a home to the pioneers and innovators who will shape the world ahead. I want us to be a truly Global Britain - the best friend and neighbour to our European partners, but a country that reaches beyond the borders of Europe too. A country that gets out into the world to build relationships with old friends and new allies alike. I want Britain to be what we have the potential, talent and ambition to be. A great, global trading nation that is respected around the world and strong, confident and united at home."
 
 	console.log("Character " + fulltext.length)
 
 	// Extract all the words
 	const words = fulltext.split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]+/)
 	console.log("Words " + words.length)
+
+	// toLowerCase()
 
 	// Create associative array and count word frequency
 	var freq = []
@@ -20,12 +21,15 @@
 	freq[words[i]] == undefined ? freq[words[i]] = 1 : ++freq[words[i]]
 
 	// Dump the counts
-for (var key in freq)
-	console.log(freq[key] + "\t" + key)
+	for (var key in freq)
+		console.log(freq[key] + "\t" + key)
+
+	console.log(new Date())
 
 	// Periodically reload the page
 	setInterval(function() {
 		if (window.location.href.split("?").pop() === "reload")
 			window.location.reload()
-	}, 1000)
+	}, 3000)
+
 </script>
