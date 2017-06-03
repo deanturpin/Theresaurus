@@ -5,11 +5,15 @@
 
 <script type="text/javascript">
 
+	function writeToDocument(str) {
+		document.write(str + "<br>")
+	}
+
 	// Extract all the words
 	const words = fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~—]+/)
 
 	const sentences = fulltext.toLowerCase().split(/[!-.;?] /)
-	console.log("Sentences " + sentences.length)
+	writeToDocument("Sentences " + sentences.length)
 
 	// Create associative array and count word frequency
 	var unique = []
@@ -38,11 +42,11 @@
 
 	unique.sort(function(a, b) { return b.count - a.count })
 
-	console.log("Total words " + words.length)
-	console.log("Unique words " + unique.length)
+	writeToDocument("Total words " + words.length)
+	writeToDocument("Unique words " + unique.length)
 
 	// Print the most common
-	for (var i = 0; i < 30 && i < unique.length; ++i)
+	for (var i = 0; i < 40 && i < unique.length; ++i)
 		document.write(i + 1 + ": \t" + unique[i].word + "<br>")
 
 	// Periodically reload the page
