@@ -10,7 +10,8 @@
 	}
 
 	// Extract all the words
-	const words = fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~—]+/)
+	const words =
+		fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
 
 	const sentences = fulltext.toLowerCase().split(/[!-.;?] /)
 	writeToDocument("Sentences " + sentences.length)
