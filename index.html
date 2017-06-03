@@ -42,8 +42,10 @@
 
 	unique.sort(function(a, b) { return b.count - a.count })
 
+	const proportion = 100 * unique.length / words.length
 	writeToDocument("Total words " + words.length)
-	writeToDocument("Unique words " + unique.length)
+	writeToDocument("Unique words " + unique.length
+			+ " (" + proportion.toPrecision(2) + "%)")
 
 	// Print the most common words
 	writeToDocument("<br> Common words")
