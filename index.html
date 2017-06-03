@@ -45,9 +45,46 @@
 	writeToDocument("Total words " + words.length)
 	writeToDocument("Unique words " + unique.length)
 
+	// Print the most common words
+	writeToDocument("Common words")
+	for (var i = 0; i < 30 && i < unique.length; ++i)
+		writeToDocument(i + 1 + ": \t" + unique[i].word)
+
+	// Clear down and prepare to count pairs
+	unique = []
+
+	// Construct pairs of words
+	const cluster = 4
+	for (var i = 0; i < words.length - cluster; ++i) {
+
+		var w = ""
+
+		for (var c = 0; c < cluster; ++c)
+			w += words[i + c] + " "
+
+		var found = -1
+
+		for (var j in unique) {
+
+			if (unique[j].word == w) {
+
+				found = j
+				break
+			}
+		}
+
+		// Increment if word exists, otherwise add it
+		found === -1
+			? unique.push({ word: w, count: 1 })
+			: ++unique[j].count
+	}
+
+	unique.sort(function(a, b) { return b.count - a.count })
+
 	// Print the most common
-	for (var i = 0; i < 40 && i < unique.length; ++i)
-		document.write(i + 1 + ": \t" + unique[i].word + "<br>")
+	writeToDocument("Common clusters")
+	for (var i = 0; i < 30 && i < unique.length; ++i)
+		writeToDocument(i + 1 + ": \t" + unique[i].word + "(" + unique[i].count + ")")
 
 	// Periodically reload the page
 	setInterval(function() {
