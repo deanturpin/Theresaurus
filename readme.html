@@ -6,7 +6,7 @@
 <script type="text/javascript">
 
 	// Extract all the words
-	const words = fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]+/)
+	const words = fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~—]+/)
 
 	const sentences = fulltext.toLowerCase().split(/[!-.;?] /)
 	console.log("Sentences " + sentences.length)
@@ -30,12 +30,10 @@
 			}
 		}
 
-		if (found === -1) {
-			unique.push({ word: w, count: 1 })
-		}
-		else {
-			++unique[j].count
-		}
+		// Increment if word exists, otherwise add it
+		found === -1
+			? unique.push({ word: w, count: 1 })
+			: ++unique[j].count
 	}
 
 	unique.sort(function(a, b) { return b.count - a.count })
@@ -45,7 +43,7 @@
 
 	// Print the most common
 	for (var i = 0; i < 30 && i < unique.length; ++i)
-		console.log(unique[i].count + "\t" + unique[i].word)
+		document.write(i + 1 + ": \t" + unique[i].word + "<br>")
 
 	// Periodically reload the page
 	setInterval(function() {
