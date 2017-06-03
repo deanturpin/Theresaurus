@@ -1,16 +1,15 @@
 <meta charset="UTF-8">
 
 <!-- The speech -->
-<!-- 
-	<script src="speech.js"></script>
--->
+<script src="speech.js"></script>
 
 <script type="text/javascript">
 
-	const fulltext = "The quick brown fox jumped over the lazy dog dog dog"
-
 	// Extract all the words
 	const words = fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]+/)
+
+	const sentences = fulltext.toLowerCase().split(/[!-.;?] /)
+	console.log("Sentences " + sentences.length)
 
 	// Create associative array and count word frequency
 	var unique = []
@@ -18,28 +17,35 @@
 	// Check if entry exists, create if not, increment if so
 	for (var i in words) {
 
-		const word = words[i]
+		const w = words[i]
 
-		unique[word] == undefined
-			? unique[word] = 1 
-			: ++unique[word]
+		var found = -1
+
+		for (var j in unique) {
+
+			if (unique[j].word == w) {
+
+				found = j
+				break
+			}
+		}
+
+		if (found === -1) {
+			unique.push({ word: w, count: 1 })
+		}
+		else {
+			++unique[j].count
+		}
 	}
 
-	unique.sort(function(a, b){
-
-		console.log(b + ", " + a)
-		return b - a
-	});
-
-	unique.sort()
+	unique.sort(function(a, b) { return b.count - a.count })
 
 	console.log("Total words " + words.length)
 	console.log("Unique words " + unique.length)
 
-	for (var i in unique) {
-
-		console.log(i + "\t" + unique[i])
-	}
+	// Print the most common
+	for (var i = 0; i < 30 && i < unique.length; ++i)
+		console.log(unique[i].count + "\t" + unique[i].word)
 
 	// Periodically reload the page
 	setInterval(function() {
