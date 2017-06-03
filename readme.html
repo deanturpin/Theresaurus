@@ -8,7 +8,6 @@
 <script type="text/javascript">
 
 	const fulltext = "The quick brown fox jumped over the lazy dog dog dog"
-	console.log("Character " + fulltext.length)
 
 	// Extract all the words
 	const words = fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~]+/)
@@ -21,17 +20,18 @@
 
 		const word = words[i]
 
-		if (unique[word] == undefined) {
-
-			// console.log(word + " doesn't exist, adding")
-			unique[word] = 1 
-		}
-		else {
-
-			// console.log("Incrementing count for " + word)
-			unique[word] += 1
-		}
+		unique[word] == undefined
+			? unique[word] = 1 
+			: ++unique[word]
 	}
+
+	unique.sort(function(a, b){
+
+		console.log(b + ", " + a)
+		return b - a
+	});
+
+	unique.sort()
 
 	console.log("Total words " + words.length)
 	console.log("Unique words " + unique.length)
@@ -41,31 +41,9 @@
 		console.log(i + "\t" + unique[i])
 	}
 
-	// var freq = []
-	// freq.push({key: 'BOB', value: 10});
-	// freq.push({key: 'TOM', value: 3});
-	// freq.push({key: 'ROB', value: 22});
-	// freq.push({key: 'JON', value: 7});
-
-	/*
-	freq.sort(function(a, b){
-
-		return b.value - a.value
-	});
-
-
-	// Dump the counts
-	console.log("Stats " + freq.length)
-
-	for (var i = 0; i < 4; ++i) {
-		console.log(freq[i].value + "\t" + freq[i].key)
-	}
-	*/
-
-	console.log(new Date())
-
 	// Periodically reload the page
 	setInterval(function() {
+
 		if (window.location.href.split("?").pop() === "reload")
 			window.location.reload()
 	}, 1000)
