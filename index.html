@@ -11,7 +11,7 @@
 
 	// Extract all the words
 	const words =
-		fulltext.toLowerCase().split(/[ !"\#$%&'()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+		fulltext.toLowerCase().split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
 
 	const sentences = fulltext.toLowerCase().split(/[!-.;?] /)
 	writeToDocument("Sentences " + sentences.length)
@@ -53,10 +53,10 @@
 	for (var i = 0; i < 30 && i < unique.length; ++i)
 		writeToDocument(i + 1 + ": \t" + unique[i].word)
 
-	// Clear down and prepare to count pairs
+	// Clear down and prepare to count clusters
 	unique = []
 
-	// Construct pairs of words
+	// Construct clusters of words
 	const cluster = 4
 	for (var i = 0; i < words.length - cluster; ++i) {
 
@@ -67,14 +67,12 @@
 
 		var found = -1
 
-		for (var j in unique) {
-
+		for (var j in unique)
 			if (unique[j].word == w) {
 
 				found = j
 				break
 			}
-		}
 
 		// Increment if word exists, otherwise add it
 		found === -1
