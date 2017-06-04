@@ -44,10 +44,12 @@ onload = function() {
 
 	writeToDocument("<h2>Summary</h2>")
 
+	// Words
 	const proportion = 100 * unique.length / words.length
 	writeToDocument("Total words " + words.length)
 	writeToDocument("Unique words " + unique.length + " (" + proportion.toPrecision(2) + "%)")
 
+	// Sentences
 	const sentences = speech.toLowerCase().split(/[!-.;?] /)
 	writeToDocument("Sentences " + sentences.length)
 
@@ -90,13 +92,14 @@ onload = function() {
 
 	// Print the most common expressions
 	writeToDocument("<h2>Common expressions</h2>")
-	for (var i = 0; i < 30 && i < unique.length; ++i)
+
+	for (var i = 0; i < 30 && i < unique.length; ++i) {
+
+		// Break out if we're into the single occurances
+		if (unique[i].count == 1)
+			break
+
+		// Otherwise write the expression
 		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
-
-	// Periodically reload the page
-	setInterval(function() {
-
-		if (window.location.href.split("?").pop() === "reload")
-			window.location.reload()
-	}, 1000)
+	}
 }
