@@ -15,10 +15,6 @@ onload = function() {
 	const words =
 		speech.toLowerCase().split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
 
-	writeToDocument("<h2>Summary</h2>")
-	const sentences = speech.toLowerCase().split(/[!-.;?] /)
-	writeToDocument("Sentences " + sentences.length)
-
 	// Create associative array and count word frequency
 	var unique = []
 
@@ -46,9 +42,17 @@ onload = function() {
 
 	unique.sort(function(a, b) { return b.count - a.count })
 
+	writeToDocument("<h2>Summary</h2>")
+
 	const proportion = 100 * unique.length / words.length
 	writeToDocument("Total words " + words.length)
 	writeToDocument("Unique words " + unique.length + " (" + proportion.toPrecision(2) + "%)")
+
+	const sentences = speech.toLowerCase().split(/[!-.;?] /)
+	writeToDocument("Sentences " + sentences.length)
+
+	const sentenceLength = words.length / sentences.length
+	writeToDocument("Average sentence length " + sentenceLength.toPrecision(2))
 
 	// Print the most common words
 	writeToDocument("<h2>Common words</h2>")
