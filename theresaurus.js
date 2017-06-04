@@ -93,7 +93,7 @@ onload = function() {
 	// Print the most common expressions
 	writeToDocument("<h2>Common expressions</h2>")
 
-	for (var i = 0; i < 30 && i < unique.length; ++i) {
+	for (var i = 0; i < 50 && i < unique.length; ++i) {
 
 		// Break out if we're into the single occurances
 		if (unique[i].count == 1)
