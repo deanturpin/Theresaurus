@@ -5,6 +5,7 @@
 
 <script type="text/javascript">
 
+	// Suffix each write to the document with a new line
 	function writeToDocument(str) {
 		document.write(str + "<br>")
 	}
@@ -51,7 +52,7 @@
 	// Print the most common words
 	writeToDocument("<br> Common words")
 	for (var i = 0; i < 30 && i < unique.length; ++i)
-		writeToDocument(i + 1 + ": \t" + unique[i].word)
+		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
 
 	// Clear down and prepare to count clusters
 	unique = []
@@ -85,7 +86,7 @@
 	// Print the most common
 	writeToDocument("<br> Common clusters")
 	for (var i = 0; i < 30 && i < unique.length; ++i)
-		writeToDocument(i + 1 + ": \t" + unique[i].word + "(" + unique[i].count + ")")
+		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
 
 	// Periodically reload the page
 	setInterval(function() {
