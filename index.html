@@ -1,98 +1,410 @@
 <meta charset="UTF-8">
 
-<!-- The speech -->
-<script src="speech.js"></script>
+<style>
+	body { font-family: sans-serif }
+</style>
 
-<script>
+<script src="theresaurus.js"></script>
 
-	// Suffix each write to the document with a new line
-	function writeToDocument(str) {
-		document.write(str + "<br>")
-	}
+<p id="results" style="float:right">
+</p>
 
-	// Extract all the words
-	const words =
-		fulltext.toLowerCase().split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+<h1>Theresa May’s speech on Brexit</h1>
+<pre id="speech" width="50%">
+A little over 6 months ago, the British people voted for change.
 
-	const sentences = fulltext.toLowerCase().split(/[!-.;?] /)
-	writeToDocument("Sentences " + sentences.length)
+They voted to shape a brighter future for our country.
 
-	// Create associative array and count word frequency
-	var unique = []
+They voted to leave the European Union and embrace the world.
 
-	// Check if entry exists, create if not, increment if so
-	for (var i in words) {
+And they did so with their eyes open: accepting that the road ahead will be
+uncertain at times, but believing that it leads towards a brighter future for
+their children — and their grandchildren too.
 
-		const w = words[i]
+And it is the job of this government to deliver it. That means more than
+negotiating our new relationship with the E.U. It means taking the opportunity
+of this great moment of national change to step back and ask ourselves what kind
+of country we want to be.
 
-		var found = -1
+My answer is clear. I want this United Kingdom to emerge from this period of
+change stronger, fairer, more united and more outward-looking than ever before.
+I want us to be a secure, prosperous, tolerant country — a magnet for
+international talent and a home to the pioneers and innovators who will shape
+the world ahead. I want us to be a truly Global Britain — the best friend and
+neighbor to our European partners, but a country that reaches beyond the borders
+of Europe too. A country that goes out into the world to build relationships
+with old friends and new allies alike.
 
-		for (var j in unique) {
+I want Britain to be what we have the potential, talent and ambition to be. A
+great, global trading nation that is respected around the world and strong,
+confident and united at home.
 
-			if (unique[j].word == w) {
+That is why this government has a Plan for Britain. One that gets us the right
+deal abroad but also ensures we get a better deal for ordinary working people at
+home.
 
-				found = j
-				break
-			}
-		}
+It’s why that plan sets out how we will use this moment of change to build a
+stronger economy and a fairer society by embracing genuine economic and social
+reform.
 
-		// Increment if word exists, otherwise add it
-		found === -1
-			? unique.push({ word: w, count: 1 })
-			: ++unique[j].count
-	}
+Why our new Modern Industrial Strategy is being developed, to ensure every
+nation and area of the United Kingdom can make the most of the opportunities
+ahead.
 
-	unique.sort(function(a, b) { return b.count - a.count })
+Why we will go further to reform our schools to ensure every child has the
+knowledge and the skills they need to thrive in post-Brexit Britain.
 
-	const proportion = 100 * unique.length / words.length
-	writeToDocument("Total words " + words.length)
-	writeToDocument("Unique words " + unique.length
-			+ " (" + proportion.toPrecision(2) + "%)")
+Why as we continue to bring the deficit down, we will take a balanced approach
+by investing in our economic infrastructure — because it can transform the
+growth potential of our economy and improve the quality of people’s lives across
+the whole country.
 
-	// Print the most common words
-	writeToDocument("<br> Common words")
-	for (var i = 0; i < 30 && i < unique.length; ++i)
-		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
+It’s why we will put the preservation of our precious Union at the heart of
+everything we do. Because it is only by coming together as one great union of
+nations and people that we can make the most of the opportunities ahead. The
+result of the referendum was not a decision to turn inward and retreat from the
+world.
 
-	// Clear down and prepare to count clusters
-	unique = []
+Because Britain’s history and culture is profoundly internationalist.
 
-	// Construct clusters of words
-	const cluster = 4
-	for (var i = 0; i < words.length - cluster; ++i) {
+We are a European country — and proud of our shared European heritage — but we
+are also a country that has always looked beyond Europe to the wider world. That
+is why we are one of the most racially diverse countries in Europe, one of the
+most multicultural members of the European Union, and why — whether we are
+talking about India, Pakistan, Bangladesh, America, Australia, Canada, New
+Zealand, countries in Africa or those that are closer to home in Europe — so
+many of us have close friends and relatives from across the world.
 
-		var w = ""
+Instinctively, we want to travel to, study in, trade with countries not just in
+Europe but beyond the borders of our continent. Even now as we prepare to leave
+the E.U., we are planning for the next biennial Commonwealth Heads of Government
+meeting in 2018 — a reminder of our unique and proud global relationships.
 
-		for (var c = 0; c < cluster; ++c)
-			w += words[i + c] + " "
+And it is important to recognize this fact. June the 23rd was not the moment
+Britain chose to step back from the world. It was the moment we chose to build a
+truly Global Britain.
 
-		var found = -1
+I know that this — and the other reasons Britain took such a decision — is not
+always well understood among our friends and allies in Europe. And I know many
+fear that this might herald the beginning of a greater unravelling of the E.U.
 
-		for (var j in unique)
-			if (unique[j].word == w) {
+But let me be clear: I do not want that to happen. It would not be in the best
+interests of Britain. It remains overwhelmingly and compellingly in Britain’s
+national interest that the E.U. should succeed. And that is why I hope in the
+months and years ahead we will all reflect on the lessons of Britain’s decision
+to leave.
 
-				found = j
-				break
-			}
+So let me take this opportunity to set out the reasons for our decision and to
+address the people of Europe directly.
 
-		// Increment if word exists, otherwise add it
-		found === -1
-			? unique.push({ word: w, count: 1 })
-			: ++unique[j].count
-	}
+It’s not simply because our history and culture is profoundly internationalist,
+important though that is. Many in Britain have always felt that the United
+Kingdom’s place in the European Union came at the expense of our global ties,
+and of a bolder embrace of free trade with the wider world.
 
-	unique.sort(function(a, b) { return b.count - a.count })
+There are other important reasons too.
 
-	// Print the most common
-	writeToDocument("<br> Common clusters")
-	for (var i = 0; i < 30 && i < unique.length; ++i)
-		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
+Our political traditions are different. Unlike other European countries, we have
+no written constitution, but the principle of Parliamentary Sovereignty is the
+basis of our unwritten constitutional settlement. We have only a recent history
+of devolved governance — though it has rapidly embedded itself — and we have
+little history of coalition government.
 
-	// Periodically reload the page
-	setInterval(function() {
+The public expect to be able to hold their governments to account very directly,
+and as a result supranational institutions as strong as those created by the
+European Union sit very uneasily in relation to our political history and way of
+life.
 
-		if (window.location.href.split("?").pop() === "reload")
-			window.location.reload()
-	}, 1000)
+And, while I know Britain might at times have been seen as an awkward member
+state, the European Union has struggled to deal with the diversity of its member
+countries and their interests. It bends towards uniformity, not flexibility.
 
-</script>
+David Cameron’s negotiation was a valiant final attempt to make it work for
+Britain — and I want to thank all those elsewhere in Europe who helped him reach
+an agreement — but the blunt truth, as we know, is that there was not enough
+flexi the body of existing E.U. law — into British law.
+
+This will give the country maximum certainty as we leave the E.U. The same rules
+and laws will apply on the day after Brexit as they did before. And it will be
+for the British Parliament to decide on any changes to that law after full
+scrutiny and proper Parliamentary debate.
+
+And when it comes to Parliament, there is one other way in which I would like to
+provide certainty. I can confirm today that the Government will put the final
+deal that is agreed between the UK and the E.U. to a vote in both Houses of
+Parliament, before it comes into force.
+
+Our second guiding principle is to build a stronger Britain.
+
+2. Control of our own laws
+
+That means taking control of our own affairs, as those who voted in their
+millions to leave the European Union demanded we must.
+
+So we will take back control of our laws and bring an end to the jurisdiction of
+the European Court of Justice in Britain. Leaving the European Union will mean
+that our laws will be made in Westminster, Edinburgh, Cardiff and Belfast. And
+those laws will be interpreted by judges not in Luxembourg but in courts across
+this country.
+
+Because we will not have truly left the European Union if we are not in control
+of our own laws.
+
+3. Strengthen the Union
+
+A stronger Britain demands that we do something else — strengthen the precious
+union between the 4 nations of the United Kingdom.
+
+At this momentous time, it is more important than ever that we face the
+futureain, and that sheer volume has put pressure on public services, like
+schools, stretched our infrastructure, especially housing, and put a downward
+pressure on wages for working class people. As home secretary for 6 years, I
+know that you cannot control immigration overall when there is free movement to
+Britain from Europe.
+
+Britain is an open and tolerant country. We will always want immigration,
+especially high-skilled immigration, we will always want immigration from
+Europe, and we will always welcome individual migrants as friends. But the
+message from the public before and during the referendum campaign was clear:
+Brexit must mean control of the number of people who come to Britain from
+Europe. And that is what we will deliver.
+
+6. Rights for E.U. nationals in Britain, and British nationals in the E.U.
+
+Fairness demands that we deal with another issue as soon as possible too. We
+want to guarantee the rights of E.U. citizens who are already living in Britain,
+and the rights of British nationals in other member states, as early as we can.
+
+I have told other E.U. leaders that we could give people the certainty they want
+straight away, and reach such a deal now.
+
+Many of them favor such an agreement — 1 or 2 others do not — but I want
+everyone to know that it remains an important priority for Britain — and for
+many other member states — to resolve this challenge as soon as possible.
+Because it is the right and fair thing to do.
+
+7. Protect workers’ rights
+
+And a reat, global, trading nation.
+
+This is such a priority for me that when I became Prime Minister I established,
+for the first time, a Department for International Trade, led by Liam Fox.
+
+We want to get out into the wider world, to trade and do business all around the
+globe. Countries including China, Brazil, and the Gulf States have already
+expressed their interest in striking trade deals with us. We have started
+discussions on future trade ties with countries like Australia, New Zealand and
+India. And President-Elect Trump has said Britain is not “at the back of the
+queue” for a trade deal with the United States, the world’s biggest economy, but
+front of the line.
+
+I know my emphasis on striking trade agreements with countries outside Europe
+has led to questions about whether Britain seeks to remain a member of the EU’s
+Customs Union. And it is true that full Customs Union membership prevents us
+from negotiating our own comprehensive trade deals.
+
+Now, I want Britain to be able to negotiate its own trade agreements. But I also
+want tariff-free trade with Europe and cross-border trade there to be as
+frictionless as possible.
+
+That means I do not want Britain to be part of the Common Commercial Policy and
+I do not want us to be bound by the Common External Tariff. These are the
+elements of the Customs Union that prevent us from striking our own
+comprehensive trade agreements with other countries. But I do want us to have a
+customs agreement with the E.U.
+
+Whether that means we must reach a completely new customs agreement, become an
+associate member of the Customs Union in some way, or remain a signatory to some
+elements of it, I hold no preconceived position. I have an open mind on how we
+do it. It is not the means that matter, but the ends.
+
+And those ends are clear: I want to remove as many barriers to trade as
+possible. And I want Britain to be free to establish our own tariff schedules at
+the World Trade Organization, meaning we can reach new trade agreements not just
+with the European Union but with old friends and new allies from outside Europe
+too.
+
+10. The best place for science and innovation
+
+A Global Britain must also be a country that looks to the future. That means
+being one of the best places in the world for science and innovation.
+
+One of our great strengths as a nation is the breadth and depth of our academic
+and scientific communities, backed up by some of the world’s best universities.
+And we have a proud history of leading and supporting cutting-edge research and
+innovation.
+
+So we will also welcome agreement to continue to collaborate with our European
+partners on major science, research, and technology initiatives.
+
+From space exploration to clean energy to medical technologies, Britain will
+remain at the forefront of collective endeavors to better understand, and make
+better, the world in which we live.
+
+11. Cooperation in the fight against crime and terrorism
+
+And a Global Britain will continue to cooperate with its European partners in
+important areas such as crime, terrorism and foreign affairs.
+
+All of us in Europe face the challenge of cross-border crime, a deadly terrorist
+threat, and the dangers presented by hostile states. All of us share interests
+and values in common, values we want to see projected around the world.
+
+With the threats to our common security becoming more serious, our response
+cannot be to cooperate with one another less, but to work together more. I
+therefore want our future relationship with the European Union to include
+practical arrangements on matters of law enforcement and the sharing of
+intelligence material with our E.U. allies.
+
+I am proud of the role Britain has played and will continue to play in promoting
+Europe’s security. Britain has led Europe on the measures needed to keep our
+continent secure — whether it is implementing sanctions against Russia following
+its action in Crimea, working for peace and stability in the Balkans, or
+securing Europe’s external border. We will continue to work closely with our
+European allies in foreign and defense policy even as we leave the E.U. itself.
+
+12. A smooth, orderly Brexit
+
+These are our objectives for the negotiation ahead — objectives that will help
+to realize our ambition of shaping that stronger, fairer, Global Britain that we
+want to see.
+
+They are the basis for a new, strong, constructive partnership with the European
+Union — a partnership of friends and allies, of interests and values. A
+partnership for a strong E.U. and a strong UK.
+
+But there is one further objective we are setting. For as I have said before —
+it is in no one’s interests for there to be a cliff-edge for business or a
+threat to stability, as we change from our existing relationship to a new
+partnership with the E.U.
+
+By this, I do not mean that we will seek some form of unlimited transitional
+status, in which we find ourselves stuck forever in some kind of permanent
+political purgatory. That would not be good for Britain, but nor do I believe it
+would be good for the E.U.
+
+Instead, I want us to have reached an agreement about our future partnership by
+the time the 2-year Article 50 process has concluded. From that point onwards,
+we believe a phased process of implementation, in which both Britain and the
+E.U. institutions and member states prepare for the new arrangements that will
+exist between us will be in our mutual self-interest. This will give businesses
+enough time to plan and prepare for those new arrangements.
+
+This might be about our immigration controls, customs systems or the way in
+which we cooperate on criminal justice matters. Or it might be about the future
+legal and regulatory framework for financial services. For each issue, the time
+we need to phase-in the new arrangements may differ. Some might be introduced
+very quickly, some might take longer. And the interim arrangements we rely upon
+are likely to be a matter of negotiation.
+
+But the purpose is clear: we will seek to avoid a disruptive cliff-edge, and we
+will do everything we can to phase in the new arrangements we require as Britain
+and the E.U. move towards our new partnership.
+
+So, these are the objectives we have set. Certainty wherever possible. Control
+of our own laws. Strengthening the United Kingdom. Maintaining the Common Travel
+Area with Ireland. Control of immigration. Rights for E.U. nationals in Britain,
+and British nationals in the E.U. Enhancing rights for workers. Free trade with
+European markets. New trade agreements with other countries. A leading role in
+science and innovation. Cooperation on crime, terrorism and foreign affairs. And
+a phased approach, delivering a smooth and orderly Brexit.
+
+This is the framework of a deal that will herald a new partnership between the
+UK and the E.U.
+
+It is a comprehensive and carefully considered plan that focuses on the ends,
+not just the means — with its eyes fixed firmly on the future, and on the kind
+of country we will be once we leave.
+
+It reflects the hard work of many in this room today who have worked tirelessly
+to bring it together and to prepare this country for the negotiation ahead.
+
+And it will, I know, be debated and discussed at length. That is only right. But
+those who urge us to reveal more — such as the blow-by-blow details of our
+negotiating strategy, the areas in which we might compromise, the places where
+we think there are potential trade-offs — will not be acting in the national
+interest.
+
+Because this is not a game or a time for opposition for opposition’s sake. It is
+a crucial and sensitive negotiation that will define the interests and the
+success of our country for many years to come. And it is vital that we maintain
+our discipline.
+
+That is why I have said before — and will continue to say — that every stray
+word and every hyped up media report is going to make it harder for us to get
+the right deal for Britain. Our opposite numbers in the European Commission know
+it, which is why they are keeping their discipline. And the ministers in this
+government know it too, which is why we will also maintain ours.
+
+So however frustrating some people find it, the government will not be pressured
+into saying more than I believe it is in our national interest to say. Because
+it is not my job to fill column inches with daily updates, but to get the right
+deal for Britain. And that is what I intend to do.
+
+I am confident that a deal — and a new strategic partnership between the UK and
+the E.U. — can be achieved.
+
+This is firstly because, having held conversations with almost every leader from
+every single E.U. member state; having spent time talking to the senior figures
+from the European institutions, including President Tusk, President Juncker, and
+President Schulz; and after my Cabinet colleagues David Davis, Philip Hammond
+and Boris Johnson have done the same with their interlocutors, I am confident
+that the vast majority want a positive relationship between the UK and the E.U.
+after Brexit.
+
+And I am confident that the objectives I am setting out today are consistent
+with the needs of the E.U. and its member states.
+
+That is why our objectives include a proposed Free Trade Agreement between
+Britain and the European Union, and explicitly rule out membership of the EU’s
+Single Market. Because when the EU’s leaders say they believe the 4 freedoms of
+the Single Market are indivisible, we respect that position. When the 27 member
+states say they want to continue their journey inside the European Union, we not
+only respect that fact but support it.
+
+Because we do not want to undermine the Single Market, and we do not want to
+undermine the European Union. We want the E.U. to be a success and we want its
+remaining member states to prosper. And of course we want the same for Britain.
+
+And the second reason I believe it is possible to reach a good deal is that the
+kind of agreement I have described today is the economically rational thing that
+both Britain and the E.U. should aim for. Because trade is not a zero sum game:
+more of it makes us all more prosperous. Free trade between Britain and the
+European Union means more trade, and more trade means more jobs and more wealth
+creation. The erection of new barriers to trade, meanwhile, means the reverse:
+less trade, fewer jobs, lower growth.
+
+The third and final reason I believe we can come to the right agreement is that
+cooperation between Britain and the E.U. is needed not just when it comes to
+trade but when it comes to our security too.
+
+Britain and France are Europe’s only 2 nuclear powers. We are the only 2
+European countries with permanent seats on the United Nations Security Council.
+Britain’s armed forces are a crucial part of Europe’s collective defense.
+
+And our intelligence capabilities — unique in Europe — have alreadresponsibility
+to respect the legitimacy of the outcome. And the country comes together.
+
+And that is what we are seeing today. Business isn’t calling to reverse the
+result, but planning to make a success of it. The House of Commons has voted
+overwhelmingly for us to get on with it. And the overwhelming majority of people
+— however they voted — want us to get on with it too.
+
+So that is what we will do.
+
+Not merely forming a new partnership with Europe, but building a stronger,
+fairer, more Global Britain too.
+
+And let that be the legacy of our time. The prize towards which we work. The
+destination at which we arrive once the negotiation is done.
+
+And let us do it not for ourselves, but for those who follow. For the country’s
+children and grandchildren too.
+
+So that when future generations look back at this time, they will judge us not
+only by the decision that we made, but by what we made of that decision.
+
+They will see that we shaped them a brighter future.
+
+They will know that we built them a better Britain.
+</pre>
