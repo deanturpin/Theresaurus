@@ -50,7 +50,7 @@ onload = function() {
 	writeToDocument("Unique words " + unique.length + " (" + proportion.toPrecision(2) + "%)")
 
 	// Print the most common words
-	writeToDocument("Common words")
+	writeToDocument("<h2>Common words</h2>")
 	for (var i = 0; i < 30 && i < unique.length; ++i)
 		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
 
@@ -84,7 +84,7 @@ onload = function() {
 	unique.sort(function(a, b) { return b.count - a.count })
 
 	// Print the most common expressions
-	writeToDocument("Common expressions")
+	writeToDocument("<h2>Common expressions</h2>")
 	for (var i = 0; i < 30 && i < unique.length; ++i)
 		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
 
