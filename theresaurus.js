@@ -1,8 +1,6 @@
-// use strict;
+"use strict"
 
 onload = function() {
-
-	console.log("loaded")
 
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerHTML
