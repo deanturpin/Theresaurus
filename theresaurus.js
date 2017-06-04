@@ -15,6 +15,7 @@ onload = function() {
 	const words =
 		speech.toLowerCase().split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
 
+	writeToDocument("<h2>Summary</h2>")
 	const sentences = speech.toLowerCase().split(/[!-.;?] /)
 	writeToDocument("Sentences " + sentences.length)
 
