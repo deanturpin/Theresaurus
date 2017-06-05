@@ -58,11 +58,14 @@ function generate() {
 	writeToDocument("Sentences " + sentences.length)
 
 	// Sort by length of sentence
-	sentences.sort(function(a,b){ return a.length - b.length })
+	sentences.sort(function(a,b){ return b.length - a.length })
 
 	const sentenceLength = words.length / sentences.length
 	writeToDocument("Average sentence length " + sentenceLength.toPrecision(2))
-	writeToDocument("Longest sentence: " + sentences[sentences.length - 1])
+	writeToDocument("Longest sentence: "
+			+ sentences[0] + " (" + sentences[0].split(' ').length + ")")
+
+	console.log(sentences)
 
 	// Print the most common words
 	writeToDocument("<h2>Common words</h2>")
@@ -96,6 +99,7 @@ function generate() {
 			: ++unique[j].count
 	}
 
+	// Sort by length (longest first)
 	unique.sort(function(a, b) { return b.count - a.count })
 
 	// Print the most common expressions
