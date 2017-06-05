@@ -1,6 +1,10 @@
 "use strict"
 
-onload = function() {
+// Give the browser a chance to get something on the screen
+setTimeout(generate, 100)
+
+// Generate all the stats
+function generate() {
 
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerText
@@ -65,7 +69,7 @@ onload = function() {
 	unique = []
 
 	// Construct clusters of words
-	const cluster = 4
+	const cluster = 3
 	for (var i = 0; i < words.length - cluster; ++i) {
 
 		var w = ""
