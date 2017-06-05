@@ -7,7 +7,7 @@ setTimeout(generate, 100)
 function generate() {
 
 	// Get the speech and results from the HTML
-	const speech = document.getElementById("speech").innerText
+	const speech = document.getElementById("speech").innerHTML
 	const results = document.getElementById("results")
 
 	// Helper function for writing the results
@@ -53,11 +53,16 @@ function generate() {
 	writeToDocument("Unique words " + unique.length + " (" + proportion.toPrecision(2) + "%)")
 
 	// Sentences
-	const sentences = speech.toLowerCase().split(/[!-.;?] /)
+	var sentences = []
+	sentences = speech.split(/[!.?]/)
 	writeToDocument("Sentences " + sentences.length)
+
+	// Sort by length of sentence
+	sentences.sort(function(a,b){ return a.length - b.length })
 
 	const sentenceLength = words.length / sentences.length
 	writeToDocument("Average sentence length " + sentenceLength.toPrecision(2))
+	writeToDocument("Longest sentence: " + sentences[sentences.length - 1])
 
 	// Print the most common words
 	writeToDocument("<h2>Common words</h2>")
