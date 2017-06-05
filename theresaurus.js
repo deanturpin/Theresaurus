@@ -3,7 +3,7 @@
 onload = function() {
 
 	// Get the speech and results from the HTML
-	const speech = document.getElementById("speech").innerHTML
+	const speech = document.getElementById("speech").innerText
 	const results = document.getElementById("results")
 
 	// Suffix each write to the document with a new line
