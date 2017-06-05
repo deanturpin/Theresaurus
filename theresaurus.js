@@ -1,21 +1,22 @@
 "use strict"
 
-// Give the browser a chance to get something on the screen
+// Give the browser a chance to get the speech on the screen
 setTimeout(generate, 100)
 
-// Generate all the stats
+// Generate the stats
 function generate() {
 
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerText
 	const results = document.getElementById("results")
 
+	// Helper function for writing the results
 	// Suffix each write to the document with a new line
 	function writeToDocument(str) {
 		results.innerHTML += str + "<br>"
 	}
 
-	// Split into words
+	// Split speech into words
 	const words =
 		speech.toLowerCase().split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
 
@@ -29,14 +30,12 @@ function generate() {
 
 		var found = -1
 
-		for (var j in unique) {
-
+		for (var j in unique)
 			if (unique[j].word == w) {
 
 				found = j
 				break
 			}
-		}
 
 		// Increment if word exists, otherwise add it
 		found === -1
@@ -69,7 +68,7 @@ function generate() {
 	unique = []
 
 	// Construct clusters of words
-	const cluster = 3
+	const cluster = 4
 	for (var i = 0; i < words.length - cluster; ++i) {
 
 		var w = ""
