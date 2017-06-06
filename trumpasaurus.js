@@ -37,9 +37,6 @@ function generate() {
 // Generate stats based on the selected speech
 function statistics() {
 
-	// Clear down the results
-	document.getElementById("results").innerHTML = ""
-
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerHTML
 	const results = document.getElementById("results")
@@ -75,7 +72,7 @@ function statistics() {
 	unique.sort(function(a, b) { return b.count - a.count })
 
 	// Let's generate results
-	results.innerHTML += "<h2>Summary</h2>"
+	results.innerHTML = "<h2>Summary</h2>"
 
 	// Words
 	const proportion = 100 * unique.length / words.length
@@ -86,7 +83,7 @@ function statistics() {
 	// Sentences
 	var sentences = []
 	sentences = speech.split(/[!.?]/)
-	results.innerHTML + "Sentences " + sentences.length + "<br>"
+	results.innerHTML += "Sentences " + sentences.length + "<br>"
 
 	// Sort by length of sentence
 	sentences.sort(function(a,b){ return b.length - a.length })
