@@ -6,11 +6,15 @@
 // Generate the stats
 function generate() {
 
+	// Get the name of the speech we're about to request
 	const title = document.getElementById("title").value
-	document.getElementById("results").innerHTML = title
+	document.getElementById("results").innerHTML = "Processing..."
 
+	// Indicate we're about to do something
+	document.getElementById("speech").innerHTML = "Loading " + title + "..."
+
+	// Create a new AJAX request
 	var client = new XMLHttpRequest();
-
 	client.open("GET", "/Theresaurus/" + title);
 
 	// Set up handler for AJAX response
@@ -21,8 +25,6 @@ function generate() {
 
 	// Request the file
 	client.send()
-
-	return
 
 	// Get the speech and results from the HTML
 	// const speech = document.getElementById("speech").innerHTML
