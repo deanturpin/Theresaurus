@@ -13,10 +13,10 @@ function generate() {
 
 	var client = new XMLHttpRequest();
 
-	client.open('GET', '/blah.txt');
+	client.open('GET', '/Theresaurus/blah.txt');
 
 	client.onreadystatechange = function() {
-		alert(client.responseText)
+		document.getElementById("results").innerHTML = client.responseText
 	}
 
 	client.send();
