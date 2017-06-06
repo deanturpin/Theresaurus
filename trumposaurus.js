@@ -139,6 +139,7 @@ function statistics() {
 		// Otherwise write the expression
 		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
 	}
+}
 
 	// Periodically reload page if there's a special token in the URL
 	// setInterval(function() {
