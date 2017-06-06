@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+http://www.americanrhetoric.com/speeches/mlkihaveadream.htm
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Martin Luther King, Jr. - I Have a Dream</h1>
-
-See <a href="http://www.americanrhetoric.com/speeches/mlkihaveadream.htm">source</a>.
-
-<pre id="speech" width="50%">
 I am happy to join with you today in what will go down in history as the
 greatest demonstration for freedom in the history of our nation.
 
@@ -198,4 +186,3 @@ From every mountainside, let freedom ring!
 	                 Free at last! Free at last!
 
 									                 Thank God Almighty, we are free at last!3
-</pre>

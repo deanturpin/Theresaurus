@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+http://edition.cnn.com/2017/05/21/politics/trump-saudi-speech-transcript/index.html
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Trump - Saudi</h1>
-
-See <a href="http://edition.cnn.com/2017/05/21/politics/trump-saudi-speech-transcript/index.html">source</a>.
-
-<pre id="speech" width="50%">
  I want to thank King Salman for his extraordinary words, and the magnificent
  Kingdom of Saudi Arabia for hosting today's summit. I am honored to be received
  by such gracious hosts. I have always heard about the splendor of your country
@@ -250,4 +238,3 @@ See <a href="http://edition.cnn.com/2017/05/21/politics/trump-saudi-speech-trans
  together— BECAUSE UNITED, WE WILL NOT FAIL.
  Thank you. God Bless You. God Bless Your Countries. And God Bless the United
  States of America.
-</pre>

@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+http://www.newstatesman.com/politics/staggers/2017/05/jeremy-corbyn-speech-terrorism-and-foreign-policy-full-text
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Jeremy Corbyn - speech on terrorism and foreign policy</h1>
-
-See <a href="http://www.newstatesman.com/politics/staggers/2017/05/jeremy-corbyn-speech-terrorism-and-foreign-policy-full-text">source</a>.
-
-<pre id="speech" width="50%">
 Our whole nation has been united in shock and grief this week as a night out at a
 concert ended in horrific terror and the brutal slaughter of innocent people
 enjoying themselves. When I stood on Albert Square at the vigil in Manchester,
@@ -184,4 +172,3 @@ who have suffered grievous injury, so many of them heart-breakingly young .
 	Together, we will be stronger. Together we can build a Britain worthy of those
 	who died and those who have inspired us all in Manchester this week. Thank
 	you.
-</pre>
