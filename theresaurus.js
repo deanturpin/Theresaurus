@@ -62,8 +62,9 @@ onload = function() {
 
 	const sentenceLength = words.length / sentences.length
 	writeToDocument("Average sentence length " + sentenceLength.toPrecision(2))
-	writeToDocument("Longest sentence: "
-			+ sentences[0] + " (" + sentences[0].split(' ').length + ")")
+	// writeToDocument("Longest sentence: "
+	//		+ sentences[0] + " (" + sentences[0].split(' ').length + ")")
+	writeToDocument("Longest sentence " + sentences[0].split(' ').length)
 
 	console.log(sentences)
 
