@@ -1,10 +1,10 @@
 "use strict"
 
 // Give the browser a chance to get the speech on the screen
-// setTimeout(generate, 100)
+setTimeout(generate, 100)
 
 // Generate the stats
-onload = function() {
+function generate() {
 
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerHTML
