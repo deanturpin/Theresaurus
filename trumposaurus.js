@@ -1,8 +1,5 @@
 "use strict"
 
-// Give the browser a chance to get the speech on the screen
-// setTimeout(generate, 100)
-
 // Generate the stats
 function generate() {
 
@@ -19,15 +16,23 @@ function generate() {
 
 	// Set up handler for AJAX response
 	client.onreadystatechange = function() {
+
+		// We have the response, update the page
 		document.getElementById("speech").innerHTML = client.responseText
 		document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
+
+		// And generate the stats for the speech
+		statistics()
 	}
 
 	// Request the file
 	client.send()
+}
+
+function statistics() {
 
 	// Get the speech and results from the HTML
-	// const speech = document.getElementById("speech").innerHTML
+	const speech = document.getElementById("speech").innerHTML
 	const results = document.getElementById("results")
 
 	// Helper function for writing the results
@@ -136,8 +141,7 @@ function generate() {
 	}
 
 	// Periodically reload page if there's a special token in the URL
-	setInterval(function() {
-		if (window.location.href.split("?").pop() === "reload")
-			window.location.reload()
-	}, 2000)
-}
+	// setInterval(function() {
+	// 	if (window.location.href.split("?").pop() === "reload")
+	// 		window.location.reload()
+	// }, 2000)
