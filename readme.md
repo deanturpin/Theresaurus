@@ -1,4 +1,4 @@
-# Trumpasaurus
+# Trumpasaurus - Word usage analysis of political speeches
 
 Must be served by a web server.
 
