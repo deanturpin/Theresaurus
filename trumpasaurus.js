@@ -24,7 +24,8 @@ function generate() {
 			document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
 
 			// And generate the stats for the speech
-			statistics()
+			// Give the browser a chance to get something on screen
+			setTimeout(statistics, 10)
 		}
 	}
 
@@ -33,6 +34,7 @@ function generate() {
 	client.send()
 }
 
+// Generate stats based on the selected speech
 function statistics() {
 
 	// Clear down the results
@@ -41,12 +43,6 @@ function statistics() {
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerHTML
 	const results = document.getElementById("results")
-
-	// Helper function for writing the results
-	// Suffix each write to the document with a new line
-	function writeToDocument(str) {
-		results.innerHTML += str + "<br>"
-	}
 
 	// Split speech into words
 	const words =
@@ -75,26 +71,30 @@ function statistics() {
 			: ++unique[j].count
 	}
 
+	// Sort the results so the important ones are at the front
 	unique.sort(function(a, b) { return b.count - a.count })
 
-	writeToDocument("<h2>Summary</h2>")
+	// Let's generate results
+	results.innerHTML += "<h2>Summary</h2>"
 
 	// Words
 	const proportion = 100 * unique.length / words.length
-	writeToDocument("Total words " + words.length)
-	writeToDocument("Unique words " + unique.length + " (" + proportion.toPrecision(2) + "%)")
+	results.innerHTML += "Total words " + words.length + "<br>"
+	results.innerHTML +=
+		"Unique words " + unique.length + " (" + proportion.toPrecision(2) + "%)" + "<br>"
 
 	// Sentences
 	var sentences = []
 	sentences = speech.split(/[!.?]/)
-	writeToDocument("Sentences " + sentences.length)
+	results.innerHTML + "Sentences " + sentences.length + "<br>"
 
 	// Sort by length of sentence
 	sentences.sort(function(a,b){ return b.length - a.length })
 
 	const sentenceLength = words.length / sentences.length
-	writeToDocument("Average sentence length " + sentenceLength.toPrecision(2))
-	writeToDocument("Longest sentence " + sentences[0].split(' ').length)
+	results.innerHTML +=
+		"Average sentence length " + sentenceLength.toPrecision(2) + "<br>"
+	results.innerHTML += "Longest sentence " + sentences[0].split(' ').length + "<br>"
 
 	// Clear down and prepare to count clusters
 	unique = []
@@ -127,7 +127,7 @@ function statistics() {
 	unique.sort(function(a, b) { return b.count - a.count })
 
 	// Print the most common expressions
-	writeToDocument("<h2>Common expressions</h2>")
+	results.innerHTML += "<h2>Common expressions</h2>"
 
 	for (var i = 0; i < 50 && i < unique.length; ++i) {
 
@@ -136,6 +136,7 @@ function statistics() {
 			break
 
 		// Otherwise write the expression
-		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
+		results.innerHTML +=
+			i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")" + "<br>"
 	}
 }
