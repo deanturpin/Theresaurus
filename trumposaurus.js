@@ -6,20 +6,21 @@
 // Generate the stats
 function generate() {
 
-	const speech = document.getElementById("speech").value
-	document.getElementById("results").innerHTML = speech
-
-	// document.getElementById("results").setAttribute("src", speech)
+	const title = document.getElementById("title").value
+	document.getElementById("results").innerHTML = title
 
 	var client = new XMLHttpRequest();
 
-	client.open('GET', '/Theresaurus/blah.txt');
+	client.open("GET", "/Theresaurus/" + title);
 
+	// Set up handler for AJAX response
 	client.onreadystatechange = function() {
-		document.getElementById("results").innerHTML = client.responseText
+		document.getElementById("speech").innerHTML = client.responseText
+		document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
 	}
 
-	client.send();
+	// Request the file
+	client.send()
 
 	return
 
