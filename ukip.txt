@@ -1,17 +1,3 @@
-<meta charset="UTF-8">
-
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>UKIP manifesto 2017</h1>
-
-See <a href="https://www.washingtonpost.com/news/worldviews/wp/2017/01/17/full-transcript-theresa-mays-speech-on-brexit/">source</a>.
-
-<pre id="speech" width="50%">
 BRITAIN
 TOGETHER
 UKIP
@@ -5490,4 +5476,3 @@ Britain Together | 63
 O
 
 
-</pre>

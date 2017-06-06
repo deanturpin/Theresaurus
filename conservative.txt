@@ -1,17 +1,3 @@
-<meta charset="UTF-8">
-
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Conservative manifesto 2017</h1>
-
-See <a href="https://s3.eu-west-2.amazonaws.com/manifesto2017/Manifesto2017.pdf">source</a>.
-
-<pre id="speech" width="50%">
 FORWARD,
 TOGETHER
 Our Plan for a
@@ -1757,4 +1743,3 @@ part of our country, is given the chance to go wherever their talents will take
 them. In this period of profound national change, we will only achieve our
 ambitions if we have the strong and stable leadership our national interest
 demands. With Theresa May and her team, we will se
-</pre>

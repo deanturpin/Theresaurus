@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+http://www.latimes.com/politics/la-na-pol-donald-trump-convention-speech-transcript-20160721-snap-htmlstory.html
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" width="50%" style="float:right"></p>
-
-<h1>Donald Trump - convention speech</h1>
-
-See <a href="http://www.latimes.com/politics/la-na-pol-donald-trump-convention-speech-transcript-20160721-snap-htmlstory.html">source</a>.
-
-<pre id="speech" width="50%">
 Friends, delegates and fellow Americans: I humbly and gratefully accept your
 nomination for the presidency of the United States.
 
@@ -278,4 +266,3 @@ We will make America safe again.
 And we will make America great again.
 
 God bless you and goodnight. I love you.
-</pre>

@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+https://www.theguardian.com/media/2010/jun/16/stephen-fry-bafta-lecture
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Stephen Fry - Bafta speech</h1>
-
-See <a href="https://www.theguardian.com/media/2010/jun/16/stephen-fry-bafta-lecture">source</a>.
-
-<pre id="speech" width="50%">
 Oh ladies and gentlemen, thank you very much. I don't know what source John
 uses. It was a temporary blip. I have 370,000 more followers than Sarah Brown as
 of this morning but I wish her well. My lords, ladies, honoured guests, dears
@@ -303,4 +291,3 @@ Your guess is probably much better than mine as to the reason.
  able to read a profit and loss account or a balance sheet, and I go swimmy and
  feel sick if I have to read a legal document because on the whole I'd rather
  watch television. Thank you!
-</pre>

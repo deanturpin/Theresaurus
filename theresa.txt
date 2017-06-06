@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+https://www.washingtonpost.com/news/worldviews/wp/2017/01/17/full-transcript-theresa-mays-speech-on-brexit/
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Theresa May - Brexit</h1>
-
-See <a href="https://www.washingtonpost.com/news/worldviews/wp/2017/01/17/full-transcript-theresa-mays-speech-on-brexit/">source</a>.
-
-<pre id="speech" width="50%">
 A little over 6 months ago, the British people voted for change.
 
 They voted to shape a brighter future for our country.
@@ -408,4 +396,3 @@ only by the decision that we made, but by what we made of that decision.
 They will see that we shaped them a brighter future.
 
 They will know that we built them a better Britain.
-</pre>

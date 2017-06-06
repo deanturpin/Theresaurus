@@ -1,17 +1,5 @@
-<meta charset="UTF-8">
+href="http://www.latimes.com/politics/la-na-pol-hillary-clinton-convention-speech-transcript-20160728-snap-htmlstory.html
 
-<!-- Includes -->
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="theresaurus.js"></script>
-
-<!-- Analysis is written here -->
-<p id="results" style="float:right"></p>
-
-<h1>Hillary Clinton - convention speech</h1>
-
-See <a href="http://www.latimes.com/politics/la-na-pol-hillary-clinton-convention-speech-transcript-20160728-snap-htmlstory.html">source</a>.
-
-<pre id="speech" width="50%">
 Thank you! Thank you all very much! Thank you for that amazing welcome. 
 
 Thank you all for the great convention that we’ve had.
@@ -454,4 +442,3 @@ children and our beloved country. And when we do, America will be greater than
 ever.
 
 Thank you and may God bless you and the United States of America!
-</pre>

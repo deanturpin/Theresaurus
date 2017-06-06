@@ -1,27 +1,30 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
 
 <!-- Includes -->
 <link rel="stylesheet" type="text/css" href="style.css" />
+<script src="trumposaurus.js"></script>
 
-<h1>Theresaurus - speech analysis</h2>
+<h1 id="heading">select a speech</h1>
 
-<ul>
-	<li><a href="theresa.html">Theresa May - Brexit</a></li>
-	<li><a href="jeremy.html">Jeremy Corbyn - speech on terrorism and foreign policy<Terrorism and foreign policy</a></li>
-	<li><a href="martin.html">Martin Luther King, Jr. - I Have a Dream</a></li>
-	<li><a href="stephen.html">Stephen Fry - Bafta speech</a></li>
-	<li><a href="pie.html">Jonathon Pie - Manchester bombing</a></li>
-	<li><a href="trump-atlanta.html">Donald Trump - Atlanta</a></li>
-	<li><a href="trump-saudi.html">Donald Trump - Saudi</a></li>
-	<li><a href="trump-convention.html">Donald Trump - Convention</a></li>
-	<li><a href="hillary.html">Hillary Clinton - Convention</a></li>
-</ul>
+<select id="title" onchange="generate()">
+	<option value="">select</option>
+	<option value="trump-atlanta.txt">Trump - Atlanta</option>
+	<option value="trump-convention.txt">Trump - Convention</option>
+	<option value="trump-saudi.txt">Trump - Saudi</option>
+	<option value="theresa.txt">Theresa</option>
+	<option value="jeremy.txt">Jeremy</option>
+	<option value="hillary.txt">Hillary</option>
+	<option value="pie.txt">Pie</option>
+	<option value="martin.txt">Martin Luther King</option>
+	<option value="stephen.txt">Stephen Fry - Bafta</option>
+	<option value="conservative.txt">Conservative manifesto</option>
+	<option value="labour.txt">Labour manifesto</option>
+	<option value="ukip.txt">UKIP manifesto</option>
+</select>
 
-<h2>General election 2017 special!</h2>
-Haven't quite got the PDF to text conversion working but there's still some
-interesting info in there.
-<ul>
-	<li><a href="conservative.html">Conservative manifesto</a></li>
-	<li><a href="labour.html">Labour manifesto</a></li>
-	<li><a href="ukip.html">UKIP manifesto</a></li>
-</ul>
+<!-- Analysis is written here -->
+<p id="results" width="50%" style="float:right">
+</p>
+
+<pre id="speech" width="50%">
+</pre>

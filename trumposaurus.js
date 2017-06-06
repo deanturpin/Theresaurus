@@ -11,25 +11,32 @@ function generate() {
 	document.getElementById("speech").innerHTML = "Loading " + title + "..."
 
 	// Create a new AJAX request
-	var client = new XMLHttpRequest();
-	client.open("GET", "/Theresaurus/" + title);
+	var client = new XMLHttpRequest()
 
 	// Set up handler for AJAX response
 	client.onreadystatechange = function() {
 
-		// We have the response, update the page
-		document.getElementById("speech").innerHTML = client.responseText
-		document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
+		// Check response is a good one
+		if (this.readyState == 4 && this.status == 200) {
 
-		// And generate the stats for the speech
-		statistics()
+			// We have the response, update the page
+			document.getElementById("speech").innerHTML = client.responseText
+			document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
+
+			// And generate the stats for the speech
+			statistics()
+		}
 	}
 
 	// Request the file
+	client.open("GET", "/Theresaurus/" + title)
 	client.send()
 }
 
 function statistics() {
+
+	// Clear down the results
+	document.getElementById("results").innerHTML = ""
 
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerHTML
@@ -87,15 +94,7 @@ function statistics() {
 
 	const sentenceLength = words.length / sentences.length
 	writeToDocument("Average sentence length " + sentenceLength.toPrecision(2))
-	writeToDocument("Longest sentence: "
-			+ sentences[0] + " (" + sentences[0].split(' ').length + ")")
-
-	console.log(sentences)
-
-	// Print the most common words
-	// writeToDocument("<h2>Common words</h2>")
-	// for (var i = 0; i < 30 && i < unique.length; ++i)
-	// 	writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
+	writeToDocument("Longest sentence " + sentences[0].split(' ').length)
 
 	// Clear down and prepare to count clusters
 	unique = []
@@ -140,9 +139,3 @@ function statistics() {
 		writeToDocument(i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")")
 	}
 }
-
-	// Periodically reload page if there's a special token in the URL
-	// setInterval(function() {
-	// 	if (window.location.href.split("?").pop() === "reload")
-	// 		window.location.reload()
-	// }, 2000)
