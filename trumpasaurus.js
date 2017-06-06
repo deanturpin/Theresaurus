@@ -29,7 +29,7 @@ function generate() {
 	}
 
 	// Request the file
-	client.open("GET", "/Theresaurus/" + title)
+	client.open("GET", "/trumpasaurus/speeches/" + title)
 	client.send()
 }
 
