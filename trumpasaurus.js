@@ -3,12 +3,12 @@
 // Get the selected speech and initiate statistic generation
 function getSpeech() {
 
-	// Get the name of the speech we're about to request
+	// Get the name of the speech we're requesting
 	const title = document.getElementById("title").value
-	document.getElementById("results").innerHTML = "Processing..."
 
-	// Indicate we're about to do something
+	// Indicate something's happening
 	document.getElementById("speech").innerHTML = "Loading " + title + "..."
+	document.getElementById("results").innerHTML = "Processing..."
 
 	// Create a new AJAX request
 	var client = new XMLHttpRequest()
@@ -55,6 +55,7 @@ function statistics() {
 
 		var found = -1
 
+		// Search for current word in list so far
 		for (var j in unique)
 			if (unique[j].word == w) {
 
@@ -105,11 +106,13 @@ function statistics() {
 
 		var w = ""
 
+		// Create a cluster
 		for (var c = 0; c < cluster; ++c)
 			w += words[i + c] + " "
 
 		var found = -1
 
+		// Check we've already seen this one
 		for (var j in unique)
 			if (unique[j].word == w) {
 
@@ -117,7 +120,7 @@ function statistics() {
 				break
 			}
 
-		// Increment if word exists, otherwise add it
+		// Increment count if word exists, otherwise add it
 		found === -1
 			? unique.push({ word: w, count: 1 })
 			: ++unique[j].count
