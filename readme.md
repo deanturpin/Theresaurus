@@ -36,3 +36,8 @@ This can be done entirely within github.
 - In your repo settings: select "master" branch as the source in the GitHub
 	Pages section
 - View it on your github.io
+
+## Linguistic observations
+
+Theresa May's Brexit speech and the Conservative manifesto both have the lowest
+unique word counts of anything I've tested. Contrasting with Pie's rant, does the count decrease the more something is finessed?
