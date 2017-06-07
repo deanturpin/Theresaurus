@@ -1,7 +1,7 @@
 "use strict"
 
-// Generate the stats
-function generate() {
+// Get the selected speech and initiate statistic generation
+function getSpeech() {
 
 	// Get the name of the speech we're about to request
 	const title = document.getElementById("title").value
