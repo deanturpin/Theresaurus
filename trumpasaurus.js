@@ -55,7 +55,7 @@ function statistics() {
 
 		var found = -1
 
-		// Search for current word in list so far
+		// Search if the current word is already in the list
 		for (var j in unique)
 			if (unique[j].word == w) {
 
@@ -101,7 +101,7 @@ function statistics() {
 	unique = []
 
 	// Construct clusters of words
-	const cluster = 4
+	const cluster = 5
 	for (var i = 0; i < words.length - cluster; ++i) {
 
 		var w = ""
@@ -132,7 +132,7 @@ function statistics() {
 	// Print the most common expressions
 	results.innerHTML += "<h2>Common expressions</h2>"
 
-	for (var i = 0; i < 50 && i < unique.length; ++i) {
+	for (var i = 0; i < 100 && i < unique.length; ++i) {
 
 		// Break out if we're into the single occurances
 		if (unique[i].count == 1)
