@@ -101,7 +101,7 @@ function statistics() {
 	unique = []
 
 	// Construct clusters of words
-	const cluster = 5
+	const cluster = 4
 	for (var i = 0; i < words.length - cluster; ++i) {
 
 		var w = ""
