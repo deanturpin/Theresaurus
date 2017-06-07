@@ -130,7 +130,7 @@ function statistics() {
 	unique.sort(function(a, b) { return b.count - a.count })
 
 	// Print the most common expressions
-	results.innerHTML += "<h2>Repeated " + clusters + " word expressions</h2>"
+	results.innerHTML += "<h2>Repeated " + cluster + " word expressions</h2>"
 
 	for (var i = 0; i < 100 && i < unique.length; ++i) {
 
