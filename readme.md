@@ -3,7 +3,7 @@
 ## Motivation
 
 I started this purely out of curiosity to see if Theresa May was really repeating
-herself a lot. But by way of comparison I quickly extended it to other speakers. I also wondered if I could capture "the essence" of a piece without actually haven't read it. :)
+herself a lot. But by way of comparison I quickly extended it to other speakers. I also wondered if I could capture "the essence" of a piece without actually having to read it.
 
 It was originally called Theresaurus - which looks good - but Trumpasaurus is much
 more enjoyable to say.
