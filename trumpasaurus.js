@@ -132,7 +132,7 @@ function statistics() {
 	// Print the most common expressions
 	results.innerHTML += "<h2>Repeated " + cluster + " word expressions</h2>"
 
-	for (var i = 0; i < 100 && i < unique.length; ++i) {
+	for (var i = 0; i < unique.length; ++i) {
 
 		// Break out if we're into the single occurances
 		if (unique[i].count == 1)
