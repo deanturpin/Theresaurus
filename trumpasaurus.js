@@ -91,7 +91,10 @@ function statistics() {
 	const sentenceLength = words.length / sentences.length
 	results.innerHTML +=
 		"Average sentence length " + sentenceLength.toPrecision(2) + "<br>"
-	results.innerHTML += "Longest sentence " + sentences[0].split(' ').length + "<br>"
+	results.innerHTML +=
+		"Longest sentence " + sentences[0].split(' ').length + " words<br>"
+
+	console.log("Longest sentence " + sentences[0].split(' '))
 
 	// Clear down and prepare to count clusters
 	unique = []
