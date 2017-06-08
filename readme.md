@@ -10,18 +10,6 @@ actually having to read it.
 It was originally called Theresaurus - which looks cool - but Trumpasaurus is
 much more enjoyable to say.
 
-### Quotes of note
-
-Theresa May Brexit
-- friends and new allies (2) 
-- culture is profoundly internationalist (2) 
-- control of our own laws (2)
-- will always want immigration (2)
-
-UKIP manifesto
-- I have always believed that UKIP is at its best when it is being radical.
-	(Opening statement)
-
 ## Installation
 
 Trumpasaurus must be served by a web server.
