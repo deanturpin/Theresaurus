@@ -42,4 +42,7 @@ This can be done entirely within github.
 ### Preprocessing
 
 Conversations need preprocessing to split them into separate files. I use the bash
-script ```tools/split-speech.sh```.
+script ```tools/split-speech.sh```. I've left the speeches largely untouched
+unless some anomalies appear in the results. The PDF to text conversion of the
+Lib Dem manifesto for example was littered with ●●  - an artifact of the PDF to
+text conversion - so I removed them.
