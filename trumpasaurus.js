@@ -8,7 +8,7 @@ function getSpeech() {
 
 	// Indicate something's happening
 	document.getElementById("speech").innerHTML = "Loading " + title + "..."
-	document.getElementById("results").innerHTML = "<img src='/trumpasaurus/loading.gif' />"
+	document.getElementById("results").innerHTML = "Processing..."
 
 	// Create a new AJAX request
 	var client = new XMLHttpRequest()
