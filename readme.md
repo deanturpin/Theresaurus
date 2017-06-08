@@ -46,3 +46,14 @@ script ```tools/split-speech.sh```. I've left the speeches largely untouched
 unless some anomalies appear in the results. The PDF to text conversion of the
 Lib Dem manifesto for example was littered with ●●  - an artifact of the PDF to
 text conversion - so I removed them.
+
+The counts of things across manifestos was done with this sort of thing:
+```bash
+$ manifestos=(conservative.txt labour.txt ukip.txt green-manifesto-2017.txt liberal-democrat-manifesto-2017.txt)
+$ for file in ${manifestos[@]}; do echo -n "- $(grep -E -i -o 'education' $file > | wc -l)"; echo " $file"; done
+- 8 conservative.txt
+- 49 labour.txt
+- 30 ukip.txt
+- 16 green-manifesto-2017.txt
+- 37 liberal-democrat-manifesto-2017.txt
+```
