@@ -41,3 +41,15 @@ This can be done entirely within github.
 
 Theresa May's Brexit speech and the Conservative manifesto both have the lowest
 unique word counts of anything I've tested. Contrasting with Pie's rant, does the count decrease the more something is finessed?
+
+### Quotes of note
+
+Theresa May Brexit
+- friends and new allies (2) - 
+- culture is profoundly internationalist (2) 
+- control of our own laws (2)
+- will always want immigration (2)
+
+UKIP manifesto
+- I have always believed that UKIP is at its best when it is being radical.
+	(Opening statement)
