@@ -8,7 +8,25 @@ herself a lot. But by way of comparison I quickly extended it to other speakers.
 It was originally called Theresaurus - which looks good - but Trumpasaurus is much
 more enjoyable to say.
 
-## Usage
+## Linguistic observations
+
+Theresa May's Brexit speech and the Conservative manifesto both have the lowest
+unique word count results so far (29-31%). Contrast that with Pie's rant (55%). Does
+the count decrease the more something is finessed?
+
+### Quotes of note
+
+Theresa May Brexit
+- friends and new allies (2) 
+- culture is profoundly internationalist (2) 
+- control of our own laws (2)
+- will always want immigration (2)
+
+UKIP manifesto
+- I have always believed that UKIP is at its best when it is being radical.
+	(Opening statement)
+
+## Installation
 
 Trumpasaurus must be served by a web server.
 
@@ -23,8 +41,8 @@ And connect with your web browser: http://0.0.0.0:8000/trumpasaurus/
 
 ## Testing
 
-I've only tested this on Firefox and Chrome: the important thing (for me) is the issues
-not browser compatibility. 
+Tested this on recent Firefox, Safari and Chrome on the desktop. Chrome and
+Safari on iPhone.
 
 ## Adding a new speech
 
@@ -36,20 +54,3 @@ This can be done entirely within github.
 - In your repo settings: select "master" branch as the source in the GitHub
 	Pages section
 - View it on your github.io
-
-## Linguistic observations
-
-Theresa May's Brexit speech and the Conservative manifesto both have the lowest
-unique word counts of anything I've tested. Contrasting with Pie's rant, does the count decrease the more something is finessed?
-
-### Quotes of note
-
-Theresa May Brexit
-- friends and new allies (2) 
-- culture is profoundly internationalist (2) 
-- control of our own laws (2)
-- will always want immigration (2)
-
-UKIP manifesto
-- I have always believed that UKIP is at its best when it is being radical.
-	(Opening statement)
