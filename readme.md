@@ -50,3 +50,8 @@ This can be done entirely within github.
 - In your repo settings: select "master" branch as the source in the GitHub
 	Pages section
 - View it on your github.io
+
+### Preprocessing
+
+Conversations need preprocessing to split them into separate files. I use the bash
+script ```tools/split-speech.sh```.
