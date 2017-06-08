@@ -45,7 +45,7 @@ unique word counts of anything I've tested. Contrasting with Pie's rant, does th
 ### Quotes of note
 
 Theresa May Brexit
-- friends and new allies (2) - 
+- friends and new allies (2) 
 - culture is profoundly internationalist (2) 
 - control of our own laws (2)
 - will always want immigration (2)

@@ -25,7 +25,7 @@ function getSpeech() {
 
 			// And generate the stats for the speech
 			// Give the browser a chance to get something on screen
-			setTimeout(statistics, 10)
+			setTimeout(statistics, 100)
 		}
 	}
 
@@ -87,21 +87,22 @@ function statistics() {
 	results.innerHTML += "Sentences " + sentences.length + "<br>"
 
 	// Sort by length of sentence
-	sentences.sort(function(a,b){ return b.length - a.length })
+	sentences.sort(function(a, b){ return b.length - a.length })
 
 	const sentenceLength = words.length / sentences.length
 	results.innerHTML +=
 		"Average sentence length " + sentenceLength.toPrecision(2) + "<br>"
+
 	results.innerHTML +=
 		"Longest sentence " + sentences[0].split(' ').length + " words<br>"
 
-	console.log("Longest sentence " + sentences[0].split(' '))
+	console.log("Longest sentence: " + sentences[0])
 
 	// Clear down and prepare to count clusters
 	unique = []
 
 	// Construct clusters of words
-	const cluster = 4
+	const cluster = 5
 	for (var i = 0; i < words.length - cluster; ++i) {
 
 		var w = ""
