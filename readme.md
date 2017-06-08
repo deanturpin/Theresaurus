@@ -2,17 +2,13 @@
 
 ## Motivation
 
-I started this purely out of curiosity to see if Theresa May was really repeating
-herself a lot. But by way of comparison I quickly extended it to other speakers. I also wondered if I could capture "the essence" of a piece without actually having to read it.
+I started this purely out of curiosity to see if Theresa May was really
+repeating herself a lot. But by way of comparison I quickly extended it to other
+speakers. I also wondered if I could capture "the essence" of a piece without
+actually having to read it.
 
-It was originally called Theresaurus - which looks good - but Trumpasaurus is much
-more enjoyable to say.
-
-## Linguistic observations
-
-Theresa May's Brexit speech and the Conservative manifesto both have the lowest
-unique word count results so far (29-31%). Contrast that with Pie's rant (55%). Does
-the count decrease the more something is finessed?
+It was originally called Theresaurus - which looks cool - but Trumpasaurus is
+much more enjoyable to say.
 
 ### Quotes of note
 
