@@ -41,6 +41,7 @@ readonly keywords=(
 'stormont'
 'strong|stable'
 'surveillance'
+'syria'
 'tax'
 'theresa'
 'tourism|tourist'
