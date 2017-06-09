@@ -28,12 +28,19 @@ keywords=(
 'lgbt'
 'disabled|disability'
 'abortion'
+'ireland'
 )
 
+# Print the headings (first few chars of each party)
+for m in ${manifestos[@]}; do
+	echo -en "${m:0:4}\t"
+done
+echo
+
+# Count instances of each keyword in the manifestos
 for k in ${keywords[@]}; do
-	echo -e "$k\n"
 	for file in ${manifestos[@]}; do
-		echo -e "$(grep -E -o -i $k $file | wc -l) \t${file##*/}"
+		echo -en "$(grep -E -o -i $k $file | wc -l)\t" # \t${file##*/}"
 	done
-	echo
+	echo -e "$k"
 done
