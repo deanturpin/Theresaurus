@@ -35,6 +35,7 @@ readonly keywords=(
 'police|justice'
 'racism|racist'
 'saudi'
+'scotland'
 'sex'
 'sinn'
 'stormont'
