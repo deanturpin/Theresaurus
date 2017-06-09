@@ -1,46 +1,70 @@
 #!/bin/bash
 
-[[ $# == 0 ]] && echo gimme some speeches && exit
+readonly manifestos=(
+'Conservative'
+'DUP'
+'Labour'
+'Green'
+'UKIP'
+'Libdem'
+)
 
-manifestos=$@
-
-keywords=(
-'nhs'
-'islam|muslim'
-'climate'
-'strong|stable'
-'fgm|mutilation'
-'europe|european|eu|e.u.'
-'tax'
-'crime'
-'education'
-'cyber'
-'university|universities'
-'debt'
-'wealth|money'
-'community|communities'
-'surveillance'
+readonly keywords=(
+'abortion'
 'badger'
 'blair'
-'ivory'
-'police'
-'racism|racist'
-'lgbt'
+'brexit'
+'cameron'
+'clegg'
+'climate'
+'community|communities'
+'conservative'
+'corbyn'
+'crime'
+'cyber'
+'debt'
+'defence'
 'disabled|disability'
-'abortion'
+'education|school'
+'europe|european|eu|e.u.'
+'fgm|mutilation'
+'immigrant|immigration'
+'internet'
 'ireland'
+'islam|muslim'
+'ivory'
+'jihad|terror'
+'labour'
+'lgbt'
+'nhs'
+'nuclear'
+'nuttall'
+'police|justice'
+'racism|racist'
+'saudi'
+'sex'
+'sinn'
+'stormont'
+'strong|stable'
+'surveillance'
+'tax'
+'theresa'
+'tourism|tourist'
+'trump'
+'university|universities'
+'wealth|money|economy'
 )
 
 # Print the headings (first few chars of each party)
 for m in ${manifestos[@]}; do
-	echo -en "${m:0:4}\t"
+	echo -en "${m:0:7}\t"
 done
 echo
 
 # Count instances of each keyword in the manifestos
 for k in ${keywords[@]}; do
 	for file in ${manifestos[@]}; do
-		echo -en "$(grep -E -o -i $k $file | wc -l)\t" # \t${file##*/}"
+		echo -en "$(grep -E -o -i $k $file | wc -l | tr 0 ' ')\t"
 	done
 	echo -e "$k"
 done
