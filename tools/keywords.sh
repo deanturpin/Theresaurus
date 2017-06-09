@@ -1,13 +1,6 @@
 #!/bin/bash
 
-readonly manifestos=(
-'Conservative'
-'DUP'
-'Labour'
-'Green'
-'UKIP'
-'Libdem'
-)
+readonly manifestos=$@
 
 readonly keywords=(
 'abortion'
