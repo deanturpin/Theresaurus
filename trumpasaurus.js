@@ -2,7 +2,6 @@
 
 // Get the selected speech and initiate statistic generation
 function getSpeech() {
-
 	// Get the name of the speech we're requesting
 	const title = document.getElementById("title").value
 
@@ -18,7 +17,6 @@ function getSpeech() {
 
 		// Check response is a good one
 		if (this.readyState == 4 && this.status == 200) {
-
 			// We have the response, update the page
 			document.getElementById("speech").innerHTML = client.responseText
 			document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
@@ -36,7 +34,6 @@ function getSpeech() {
 
 // Generate stats based on the selected speech
 function statistics() {
-
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerHTML
 	const results = document.getElementById("results")
@@ -50,7 +47,6 @@ function statistics() {
 
 	// Check if entry exists, create if not, increment if so
 	for (var i in words) {
-
 		const w = words[i]
 
 		var found = -1
@@ -58,7 +54,6 @@ function statistics() {
 		// Search if the current word is already in the list
 		for (var j in unique)
 			if (unique[j].word == w) {
-
 				found = j
 				break
 			}
@@ -104,7 +99,6 @@ function statistics() {
 	// Construct clusters of words
 	const cluster = 4
 	for (var i = 0; i < words.length - cluster; ++i) {
-
 		var w = ""
 
 		// Create a cluster
@@ -116,7 +110,6 @@ function statistics() {
 		// Check we've already seen this one
 		for (var j in unique)
 			if (unique[j].word == w) {
-
 				found = j
 				break
 			}
@@ -134,7 +127,6 @@ function statistics() {
 	results.innerHTML += "<h2>Repeated " + cluster + " word expressions</h2>"
 
 	for (var i = 0; i < unique.length; ++i) {
-
 		// Break out if we're into the single occurances
 		if (unique[i].count == 1)
 			break
