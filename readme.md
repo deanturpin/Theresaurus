@@ -57,3 +57,8 @@ $ for file in ${manifestos[@]}; do echo -n "- $(grep -E -i -o 'education' $file 
 - 16 green-manifesto-2017.txt
 - 37 liberal-democrat-manifesto-2017.txt
 ```
+
+Converting PDFs to text
+```bash
+$ pdftotext DUP_Wminster_Manifesto_2017_v5.{pdf,txt
+```
