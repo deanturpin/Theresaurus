@@ -45,6 +45,7 @@ readonly keywords=(
 'tax'
 'theresa'
 'tourism|tourist'
+'trident'
 'trump'
 'university|universities'
 'wealth|money|economy'
