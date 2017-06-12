@@ -52,7 +52,7 @@ speeches folder. Pass it a list of files to compare.
 
 ```bash
 $ cd speeches
-$  ../tools/keywords.sh Conservative DUP Labour Green Libdem
+$  ../tools/keywords.sh Conservative DUP Labour Green UKIP Libdem
 Conserv DUP     Labour  Green   UKIP    Libdem
                 1                               abortion
                 1                               badger
