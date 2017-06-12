@@ -66,5 +66,5 @@ Conserv DUP     Labour  Green   UKIP    Libdem
 
 Converting manifesto PDFs to text
 ```bash
-$ pdftotext DUP_Wminster_Manifesto_2017_v5.{pdf,txt
+$ pdftotext DUP_Wminster_Manifesto_2017_v5.{pdf,txt}
 ```
