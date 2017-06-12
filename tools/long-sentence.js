@@ -19,9 +19,7 @@ for (var i = 0; i < words.length; ++i) {
 	for (var j = i + 1; j < words.length; ++j) {
 
 		segment += words[j] + " "
-
 		results[segment] == undefined ? results[segment] = 1 : ++results[segment]
-
 	}
 }
 

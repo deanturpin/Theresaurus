@@ -1,7 +1,16 @@
 "use strict"
 
+// onload = getSpeech()
+
 // Get the selected speech and initiate statistic generation
 function getSpeech() {
+// onload = function() {
+
+	setInterval(function() {
+		if (window.location.href.split("?").pop() === "reload")
+			window.location.reload()
+	}, 2000)
+
 	// Get the name of the speech we're requesting
 	const title = document.getElementById("title").value
 
@@ -34,14 +43,48 @@ function getSpeech() {
 
 // Generate stats based on the selected speech
 function statistics() {
+
 	// Get the speech and results from the HTML
-	const speech = document.getElementById("speech").innerHTML
+	const speech = document.getElementById("speech").innerHTML.toLowerCase()
 	const results = document.getElementById("results")
 
-	// Split speech into words
-	const words =
-		speech.toLowerCase().split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+	// Extract sentences and sort by length
+	const sentences = speech.split(/[!.?]/)
+	sentences.sort(function(a, b){ return b.length - a.length })
 
+	// Create array for results
+	var phrases = []
+
+	for (var s in sentences) {
+
+		// Split sentence into words
+		const words = sentences[s].split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+
+		// Create/increment entry for each word
+		for (var i = 0; i < words.length; ++i) {
+
+			// Initialise segment
+			var segment = ""
+
+			// Iterate over remaining sentence creating entries as we go
+			for (var j = i + 1; j < words.length; ++j)
+				segment += words[j] + " "
+					phrases[segment] == undefined ? phrases[segment] = 1 : ++phrases[segment]
+		}
+	}
+
+	// Find the longest sentence
+	results.innerHTML = ""
+
+	var longest = ""
+	for (var i in phrases)
+		if (longest.length < i.length && phrases[i] > 1) {
+
+			longest = i
+			results.innerHTML += longest + "(" + phrases[longest] + ")<br>"
+		}
+
+	/*
 	// Create associative array and count word frequency
 	var unique = []
 
@@ -91,7 +134,7 @@ function statistics() {
 	results.innerHTML +=
 		"Longest sentence " + sentences[0].split(' ').length + " words<br>"
 
-	// console.log("Longest sentence: " + sentences[0])
+	console.log("Longest sentence: " + sentences[0])
 
 	// Clear down and prepare to count clusters
 	unique = []
@@ -135,4 +178,5 @@ function statistics() {
 		results.innerHTML +=
 			i + 1 + ": " + unique[i].word + " (" + unique[i].count + ")" + "<br>"
 	}
+	*/
 }
