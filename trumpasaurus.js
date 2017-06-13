@@ -1,10 +1,8 @@
 "use strict"
 
-// onload = getSpeech()
-
 // Get the selected speech and initiate statistic generation
-function getSpeech() {
-// onload = function() {
+// function getSpeech() {
+onload = function() {
 
 	setInterval(function() {
 		if (window.location.href.split("?").pop() === "reload")
@@ -45,35 +43,80 @@ function getSpeech() {
 function statistics() {
 
 	// Get the speech and results from the HTML
-	const speech = document.getElementById("speech").innerHTML.toLowerCase()
+	const speech =
+		document.getElementById("speech").innerText.toLowerCase().replace(/\r?\n/g, " ")
+
+	console.log(speech)
+
 	const results = document.getElementById("results")
 
 	// Extract sentences and sort by length
-	const sentences = speech.split(/[!.?]/)
+	const sentences = speech.split(/[!.?] */)
 	sentences.sort(function(a, b){ return b.length - a.length })
 
 	// Create array for results
 	var phrases = []
 
+	console.log("sentences", sentences.length)
+
 	for (var s in sentences) {
 
 		// Split sentence into words
-		const words = sentences[s].split(/[ !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+		var words = sentences[s].split(/[\n !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+		// words.pop()
 
 		// Create/increment entry for each word
+		// console.log("words", words.length)
+		console.log(words)
 		for (var i = 0; i < words.length; ++i) {
 
 			// Initialise segment
 			var segment = ""
 
 			// Iterate over remaining sentence creating entries as we go
-			for (var j = i + 1; j < words.length; ++j)
+			for (var j = i; j < words.length; ++j) {
+
+				// Append to segment
+				// segment += words[j] + (j + 1 == words.length ? "" : " ")
 				segment += words[j] + " "
-					phrases[segment] == undefined ? phrases[segment] = 1 : ++phrases[segment]
+
+				// if (segment === " ")
+					// continue
+
+				// Check if we've already seen it
+				if (phrases[segment] == undefined)
+					phrases[segment] = 1
+				else
+					++phrases[segment]
+			}
 		}
 	}
 
+	for (var i in phrases)
+		console.log(phrases[i] + "\t" + i)
+
+	// Sort the results by creating a new array based on phrase length
+	var sorted = []
+
+	console.log("------------------------")
+	for (var i in phrases) {
+
+		// console.log(phrases[i] + "\t" + "\"" + i + "\"")
+
+		// If it hasn't had anything added to it yet initialise with an empty array
+		if (sorted[phrases[i]] == undefined)
+			sorted[phrases[i]] = []
+
+			const end = sorted[phrases[i]].length
+
+			sorted[phrases[i]][end] = i
+	}
+
+	for (var i in sorted)
+		console.log(i, sorted[i])
+
 	// Find the longest sentence
+	/*
 	results.innerHTML = ""
 
 	var longest = ""
@@ -83,6 +126,14 @@ function statistics() {
 			longest = i
 			results.innerHTML += longest + "(" + phrases[longest] + ")<br>"
 		}
+
+	*/
+
+	// for (var i in sorted)
+		// console.log(i)
+	
+	// console.log("Longest sentence")
+	// console.log(sorted[3])
 
 	/*
 	// Create associative array and count word frequency
