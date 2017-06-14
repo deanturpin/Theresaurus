@@ -2,9 +2,10 @@
 
 // Get the selected speech and initiate statistic generation
 function getSpeech() {
-// onload = function() {
 
+	// Peridoically reload page if there's a "reload" token in the URL
 	setInterval(function() {
+
 		if (window.location.href.split("?").pop() === "reload")
 			window.location.reload()
 	}, 2000)
@@ -24,6 +25,7 @@ function getSpeech() {
 
 		// Check response is a good one
 		if (this.readyState === 4 && this.status === 200) {
+
 			// We have the response, update the page
 			document.getElementById("speech").innerHTML = client.responseText
 			document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
@@ -43,11 +45,7 @@ function getSpeech() {
 function statistics() {
 
 	// Get the speech and results from the HTML
-	const speech =
-		document.getElementById("speech").innerText.toLowerCase().replace(/\r?\n/g, " ")
-
-	// console.log(speech)
-
+	const speech = document.getElementById("speech").innerText.toLowerCase()
 	const results = document.getElementById("results")
 
 	// Extract sentences and sort by length
@@ -63,7 +61,7 @@ function statistics() {
 	for (var s in sentences) {
 
 		// Split sentence into words
-		var words = sentences[s].split(/[\n !"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
+		var words = sentences[s].split(/[ •!"\#$%&()*+,\-./:;<=>?@\[\\\]^_`{|}~—–]+/)
 
 		// Create/increment entry for each word
 		for (var i = 0; i < words.length; ++i) {
@@ -94,24 +92,23 @@ function statistics() {
 
 	// Store if occurance count is significant
 	for (var i in phrases)
-		if (phrases[i] > 2 && i.split(" ").length > 3)
+		if (phrases[i] > 1 && i.split(" ").length > 3)
 			arr.push({ word: i, count: phrases[i] })
 
-	results.innerHTML = "Number of entries " + arr.length + "<br><br>"
+	results.innerHTML = "Entries " + arr.length + "<br><br>"
 
 	// results.innerHTML += "Sort by count<br>"
-	// arr.sort(function(a, b) { return b.count - a.count })
-	arr.sort(function(a, b)
-			{ return b.word.split(" ").length - a.word.split(" ").length })
+	arr.sort(function(a, b) { return b.count - a.count })
+	// arr.sort(function(a, b) { return b.word.split(" ").length - a.word.split(" ").length })
 	// arr.sort(function(a, b)
 			// { return b.word.length - a.word.length })
 
 	var count = 0;
 	for (var i in arr) {
 
-		results.innerHTML += arr[i].count + " \"" + arr[i].word + "\"<br>"
+		results.innerHTML += arr[i].word + " - " + arr[i].count + "<br>"
 
-		if (count++ > 200) break
+		// if (count++ > 200) break
 	}
 
 	// SORT BY WORD COUNT	
