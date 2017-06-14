@@ -52,15 +52,21 @@ speeches folder. Pass it a list of files to compare.
 
 ```bash
 $ cd speeches
-$  ../tools/keywords.sh Conservative DUP Labour Green UKIP Libdem
-Conserv DUP     Labour  Green   UKIP    Libdem
-                1                               abortion
-                1                               badger
-                                6               blair
-8       1       25      2       42      23      brexit
-        1                       1               cameron
-                                                clegg
-                14      6       5       12      climate
+$ ../tools/keywords.sh 
+Conserv	SinnFei	DUP	Labour	Green	UKIP	Libdem	
+ 	 	 	1	 	 	 	abortion
+ 	 	 	1	 	 	 	badger
+ 	 	 	 	 	6	 	blair
+8	7	1	25	2	42	23	brexit
+ 	 	1	 	 	1	 	cameron
+ 	 	 	 	 	 	 	clegg
+ 	 	 	14	6	5	12	climate
+28	4	6	66	11	21	68	community|communities
+41	 	 	68	 	17	32	conservative
+ 	 	 	1	 	1	3	corbyn
+13	1	2	23	 	25	15	crime
+8	 	6	4	 	1	2	cyber
+2	 	2	7	1	5	4	debt
 
 ```
 
