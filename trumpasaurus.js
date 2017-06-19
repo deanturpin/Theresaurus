@@ -21,7 +21,6 @@ function getSpeech() {
 
 			// We have the response, update the page
 			document.getElementById("speech").innerHTML = client.responseText
-			document.getElementById("heading").innerText = title.split(".")[0].toUpperCase()
 
 			// And generate the stats for the speech
 			// Give the browser a chance to get something on screen
