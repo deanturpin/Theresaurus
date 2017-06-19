@@ -36,6 +36,9 @@ function getSpeech() {
 // Generate stats based on the selected speech
 function statistics() {
 
+	// Record the time we began processing for later
+	const start = new Date()
+
 	// Get the speech and results from the HTML
 	const speech = document.getElementById("speech").innerText.toLowerCase()
 	const results = document.getElementById("results")
@@ -110,6 +113,9 @@ function statistics() {
 
 	// Sort by frequency
 	pruned.sort(function(a, b) { return b.freq - a.freq })
+
+	// Report processing time
+	results.innerHTML += "<br><small>Processing took " + (new Date() - start) + "ms</small><br>"
 
 	// Dump the common phrases
 	results.innerHTML += "<h3>Common phrases " + pruned.length + "</h3>"
