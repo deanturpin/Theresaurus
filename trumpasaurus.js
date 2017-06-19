@@ -68,6 +68,7 @@ function statistics() {
 		// Create/increment entry for each word
 		for (var i = 0; i < words.length; ++i) {
 
+			// Create entry if it doesn't exist, otherwise increment
 			uniqueWords[words[i]] == undefined
 				? uniqueWords[words[i]] = 1
 				: ++uniqueWords[words[i]]
@@ -90,31 +91,37 @@ function statistics() {
 		}
 	}
 
-	// Clear down the results
-	results.innerHTML = ""
+	var uniqueWordCount = 0
+	for (var i in uniqueWords)
+		++uniqueWordCount
 
-	// General stats
+	// Word stats
+	results.innerHTML = "<h3>Summary</h3>"
 	results.innerHTML += "Total words " + totalWords + "<br>"
-	const percentageUnique = (100 * uniqueWords.length / totalWords) 
-	results.innerHTML += "Unique words " + percentageUnique.toPrecision(2) + "%<br>"
+	results.innerHTML += "Unique words " + uniqueWordCount + "<br>"
+	const percentageUnique = (100 * uniqueWordCount / totalWords) 
+
+	// Sentence stats
+	results.innerHTML += "Percentage of unique words "
+		+ percentageUnique.toPrecision(2) + "%<br>"
 	results.innerHTML += "Sentences " + sentences.length + "<br>"
 	const wordsPerSentence = totalWords / sentences.length
 	results.innerHTML += "Words per sentence " + wordsPerSentence.toPrecision(2) + "<br>"
 
 	// Create array of objects
-	var arr = []
+	var pruned = []
 
 	// Store if occurance count is significant
 	for (var i in phrases)
 		if (phrases[i] > 1 && i.split(" ").length > 3)
-			arr.push({ phrase: i, freq: phrases[i], count: i.split(" ").length })
-
-	results.innerHTML += "<br>Phrases " + arr.length + "<br><br>"
+			pruned.push({ phrase: i, freq: phrases[i], count: i.split(" ").length })
 
 	// Sort by frequency and then phrase length
-	arr.sort(function(a, b) { return b.freq - a.freq })
+	pruned.sort(function(a, b) { return b.freq - a.freq })
 
 	// Dump the common phrases
-	for (var i in arr)
-		results.innerHTML += arr[i].phrase + " - " + arr[i].freq + "<br>"
+	results.innerHTML += "<h3>Common phrases " + pruned.length + "</h3>"
+
+	for (var i in pruned)
+		results.innerHTML += pruned[i].phrase + " - " + pruned[i].freq + "<br>"
 }
