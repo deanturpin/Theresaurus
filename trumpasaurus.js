@@ -3,13 +3,6 @@
 // Get the selected speech and initiate statistic generation
 function getSpeech() {
 
-	// Peridoically reload page if there's a "reload" token in the URL
-	setInterval(function() {
-
-		if (window.location.href.split("?").pop() === "reload")
-			window.location.reload()
-	}, 2000)
-
 	// Get the name of the speech we're requesting
 	const title = document.getElementById("title").value
 
@@ -108,7 +101,7 @@ function statistics() {
 	const wordsPerSentence = totalWords / sentences.length
 	results.innerHTML += "Words per sentence " + wordsPerSentence.toPrecision(2) + "<br>"
 
-	// Create array of objects
+	// Create array for our trimmed down results
 	var pruned = []
 
 	// Store if occurance count is significant
@@ -116,7 +109,7 @@ function statistics() {
 		if (phrases[i] > 1 && i.split(" ").length > 3)
 			pruned.push({ phrase: i, freq: phrases[i], count: i.split(" ").length })
 
-	// Sort by frequency and then phrase length
+	// Sort by frequency
 	pruned.sort(function(a, b) { return b.freq - a.freq })
 
 	// Dump the common phrases

@@ -10,9 +10,8 @@ actually having to read it.
 It was originally called Theresaurus - which looks cool - but Trumpasaurus is
 much more enjoyable to say.
 
-## Installation
-
-Trumpasaurus must be served by a web server.
+The analysis is client-side JavaScript but the speeches are loaded on demand by
+AJAX so it must be served by a web server.
 
 Like this one: https://deanturpin.github.io/trumpasaurus/
 
@@ -73,4 +72,16 @@ Conserv	SinnFei	DUP	Labour	Green	UKIP	Libdem
 Converting manifesto PDFs to text
 ```bash
 $ pdftotext DUP_Wminster_Manifesto_2017_v5.{pdf,txt}
+```
+
+# JavaScript dev
+
+I find reloading the page automatically really useful during development.
+```js
+	// Peridoically reload page if there's a "reload" token in the URL
+	setInterval(function() {
+
+		if (window.location.href.split("?").pop() === "reload")
+			window.location.reload()
+	}, 2000)
 ```
