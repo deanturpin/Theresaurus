@@ -1,9 +1,11 @@
 # DUP
+
 - the introduction of a NI Register of Animal Cruelty Offenders
    and the seriousness of these animal cruelty offences reflected in
 	    the sentences handed down by courts;
 
 # UKIP
+
 - disabled
 - Bigots who shout ‘racism’ or ‘Islamophobia’ will not intimidate us. [...] They need to get their moral compasses fixed.
 - Implement a screening programme for girls identified to be at risk of FGM from
@@ -26,3 +28,16 @@ UKIP will retain Britain’s independent nuclear deterrent. Give the continued e
 
 The DUP has consistently supported the maintenance of the UK’s independent nuclear deterrent and will continue to support Trident’s renewal. One of the reasons for the need to renew is the systematic failure of the international community to deal with the issue of nuclear proliferation. We believe the UK should use all international forums to completely overhaul the approaches to counter proliferation and support efforts to prevent the likes of North Korean dictatorships from gaining and distributing such technology.
 
+Every political party except UKIP has thrown its weight behind the 2008
+Climate Change Act. Set to cost us an eye-watering £319 billion
+
+# Theresa May Brexit
+
+- friends and new allies (2) 
+- culture is profoundly internationalist (2) 
+- control of our own laws (2)
+- will always want immigration (2)
+
+# Green Party manifesto
+
+1: confident and caring britain (11)
