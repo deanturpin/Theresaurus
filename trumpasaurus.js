@@ -101,7 +101,7 @@ function statistics() {
 		+ uniqueWordRatio.toPrecision(2) + "%<br>"
 	results.innerHTML += "Sentences " + sentences.length + "<br>"
 	const wordsPerSentence = totalWords / sentences.length
-	results.innerHTML += "Words per sentence " + wordsPerSentence.toPrecision(2) + "<br>"
+	results.innerHTML += "Sentence length " + wordsPerSentence.toPrecision(2) + "<br>"
 
 	// Create array for our trimmed down results
 	var pruned = []
