@@ -97,11 +97,11 @@ function statistics() {
 	const uniqueWordRatio = (100 * uniqueWordCount / totalWords) 
 
 	// Sentence stats
-	results.innerHTML += "Percentage of unique words "
-		+ uniqueWordRatio.toPrecision(2) + "%<br>"
+	results.innerHTML += "Unique word ratio " + uniqueWordRatio.toFixed(0) + "%<br>"
 	results.innerHTML += "Sentences " + sentences.length + "<br>"
-	const wordsPerSentence = totalWords / sentences.length
-	results.innerHTML += "Sentence length " + wordsPerSentence.toPrecision(2) + "<br>"
+
+	const averageSentenceLength = totalWords / sentences.length
+	results.innerHTML += "Sentence length " + averageSentenceLength.toFixed(0) + "<br>"
 
 	// Create array for our trimmed down results
 	var pruned = []
@@ -114,11 +114,17 @@ function statistics() {
 	// Sort by frequency
 	pruned.sort(function(a, b) { return b.freq - a.freq })
 
+	// Sentence / phrase ratio can only be calculated after pruning
+	const sentencePhraseRatio = pruned.length / sentences.length
+	results.innerHTML += "Phrase/sentence ratio "
+		+ sentencePhraseRatio.toFixed(2) + "<br>"
+
 	// Report processing time
 	results.innerHTML += "<br><small>Processing took " + (new Date() - start) + "ms</small><br>"
 
 	// Dump the common phrases
 	results.innerHTML += "<h3>Common phrases " + pruned.length + "</h3>"
+
 
 	for (var i in pruned)
 		results.innerHTML += pruned[i].phrase + " - " + pruned[i].freq + "<br>"
