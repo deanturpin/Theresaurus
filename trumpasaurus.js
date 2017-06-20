@@ -119,6 +119,17 @@ function statistics() {
 	results.innerHTML += "Phrase/sentence ratio "
 		+ sentencePhraseRatio.toFixed(2) + "<br>"
 
+	// Summarise in a sentence
+	const summary = 
+		uniqueWordRatio < 25 ? "is repetitive and tiresome" :
+			uniqueWordRatio < 30 ? "is overly finessed" :
+				uniqueWordRatio < 33 ? "has had some work done" :
+					uniqueWordRatio < 36 ? "is practiced but loose" :
+						uniqueWordRatio < 42 ? "is spontaneous"
+							: "is a rant"
+	
+	results.innerHTML += "<br>This speech " + summary + "<br>"
+
 	// Report processing time
 	results.innerHTML += "<br><small>Processing took " + (new Date() - start) + "ms</small><br>"
 
