@@ -94,11 +94,11 @@ function statistics() {
 	results.innerHTML = "<h3>Summary</h3>"
 	results.innerHTML += "Total words " + totalWords + "<br>"
 	results.innerHTML += "Unique words " + uniqueWordCount + "<br>"
-	const percentageUnique = (100 * uniqueWordCount / totalWords) 
+	const uniqueWordRatio = (100 * uniqueWordCount / totalWords) 
 
 	// Sentence stats
 	results.innerHTML += "Percentage of unique words "
-		+ percentageUnique.toPrecision(2) + "%<br>"
+		+ uniqueWordRatio.toPrecision(2) + "%<br>"
 	results.innerHTML += "Sentences " + sentences.length + "<br>"
 	const wordsPerSentence = totalWords / sentences.length
 	results.innerHTML += "Words per sentence " + wordsPerSentence.toPrecision(2) + "<br>"
