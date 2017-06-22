@@ -41,3 +41,7 @@ Climate Change Act. Set to cost us an eye-watering £319 billion
 # Green Party manifesto
 
 1: confident and caring britain (11)
+
+# Lowest unique word ratios recorded
+21 - http://www.britishpoliticalspeech.org/speech-archive.htm?speech=307
+
