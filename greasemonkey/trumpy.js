@@ -54,14 +54,28 @@ function statistics() {
   console.log("Total words " + totalWords)
   console.log("Unique word ratio " + uniqueWordRatio.toFixed(0) + "%")
 
-  // Summarise in a sentence
-	const summary = 
+	// Summarise in a sentence
+	var summary = "The speech "
+
+	// Interesting
+	summary += 
 		uniqueWordRatio < 25 ? "is repetitive and tiresome" :
 			uniqueWordRatio < 30 ? "is overly finessed" :
 				uniqueWordRatio < 33 ? "has had some work done" :
 					uniqueWordRatio < 36 ? "is practiced but loose" :
-						uniqueWordRatio < 42 ? "is spontaneous"
-							: "is a rant"
+						uniqueWordRatio < 42 ? "is spontaneous" : "is a rant"
+
+	// Length
+	summary += " "
+	summary += 
+		totalWords < 500 ? "and is very short" :
+			totalWords < 1000 ? "but at least it's short" :
+				totalWords < 2000 ? "and is on the short side" :
+					totalWords < 3000 ? "and is a good size" :
+						totalWords < 4000 ? "and is dragging on a bit" :
+  						totalWords < 5000 ? "and is getting long" :
+    						totalWords < 7000 ? "and is SOOO long" :
+       						totalWords < 9000 ? "... please to kill me now (far too long)" : "and is the longest I've seen"
 	
-	console.log("This text " + summary)
+	console.log(summary)
 }
