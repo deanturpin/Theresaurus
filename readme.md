@@ -27,6 +27,10 @@ And connect with your web browser: http://0.0.0.0:8000/trumpasaurus/
 Tested this on recent Firefox, Safari and Chrome on the desktop. Chrome and
 Safari on iPhone.
 
+## Greasemonkey/Tampermonkey script
+
+Click [here](trumpy.user.js).
+
 ## Adding a new speech
 
 This can be done entirely within github.
