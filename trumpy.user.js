@@ -3,7 +3,7 @@
 // @namespace   deanturpin
 // @description Quick word stat check to find candidate speeches for further study
 // @include     http://www.britishpoliticalspeech.org/*
-// @version     2
+// @version     3
 // @grant       none
 // ==/UserScript==
 
@@ -12,13 +12,19 @@ var popup = document.createElement("div");
 var t = document.createTextNode("");
 
 // Style the popup
-popup.style = "font-size: 200%; background-color: grey; color: white; position:fixed; bottom: 0; right: 0; width: 300px; text-align: left;";
+var props = "font-size: 200%; text-align: left;";
+props += "background-color: #eee; color: black;  border: 1px solid black;";
+props += "position:fixed; bottom: 0; right: 0; width: 500px; margin: 20px;";
+props += "padding: 20px;";
+props += "box-shadow: 10px 10px 5px #ccc;";
+props += "border-radius: 20px;";
+popup.style = props;
 
 popup.appendChild(t);
 document.body.appendChild(popup);
 
 // Initialise popup
-popup.innerHTML = "<h1>👌TRUMPY</h1>";
+popup.innerHTML = "<h1 style=\"color:red;\">TRUMPY 👌</h1>";
 
 var speech = "";
 
@@ -81,5 +87,5 @@ function statistics() {
     totalWords < 9000 ? "... kill me now"
     : "and is the longest I've seen";
 
-    popup.innerHTML += "<br>" + summary + "<br>";
+    popup.innerHTML += "<br><i>" + summary + "</i><br>";
 }
