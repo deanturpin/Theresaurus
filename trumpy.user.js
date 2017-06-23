@@ -7,7 +7,18 @@
 // @grant       none
 // ==/UserScript==
 
-console.log("trumpy!");
+// Create a popup
+var popup = document.createElement("div");
+var t = document.createTextNode("");
+
+// Style the popup
+popup.style = "font-size: 200%; background-color: grey; color: white; position:fixed; bottom: 0; right: 0; width: 300px; text-align: left;";
+
+popup.appendChild(t);
+document.body.appendChild(popup);
+
+// Initialise popup
+popup.innerHTML = "<h1>👌TRUMPY</h1>";
 
 var speech = "";
 
@@ -43,11 +54,11 @@ function statistics() {
     // And calculate the important metric
     const uniqueWordRatio = (100 * uniqueWordCount / totalWords);
 
-    console.log("Total words " + totalWords);
-    console.log("Unique word ratio " + uniqueWordRatio.toFixed(0) + "%");
+    popup.innerHTML += "Total words " + totalWords + "<br>";
+    popup.innerHTML += "Unique word ratio " + uniqueWordRatio.toFixed(0) + "%<br>";
 
     // Summarise in a sentence
-    var summary = "The speech ";
+    var summary = "This speech ";
 
     // Interesting
     summary +=
@@ -67,8 +78,8 @@ function statistics() {
     totalWords < 4000 ? "and is dragging on a bit" :
     totalWords < 5000 ? "and is getting long" :
     totalWords < 7000 ? "and is SOOO long" :
-    totalWords < 9000 ? "... please to kill me now (far too long)"
+    totalWords < 9000 ? "... kill me now"
     : "and is the longest I've seen";
 
-    console.log(summary);
+    popup.innerHTML += "<br>" + summary + "<br>";
 }
