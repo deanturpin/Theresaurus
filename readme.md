@@ -31,7 +31,7 @@ Safari on iPhone.
 
 Install [thee script](trumpy.user.js).
 
-I prefer Tampermonkey/Chrome but either is fine.
+I prefer Tampermonkey/Chrome but either is fine. This script only runs on the [British Polical Speech website](http://www.britishpoliticalspeech.org/speech-archive.htm?speech=364).
 
 ## Adding a new speech
 
