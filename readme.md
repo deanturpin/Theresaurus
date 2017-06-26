@@ -29,7 +29,9 @@ Safari on iPhone.
 
 ## Greasemonkey/Tampermonkey script
 
-Click [here](trumpy.user.js). I actually prefer Tampermonkey/Chrome but either is fine.
+Install [thee script](trumpy.user.js).
+
+I prefer Tampermonkey/Chrome but either is fine.
 
 ## Adding a new speech
 
