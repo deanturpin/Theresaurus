@@ -1,3 +1,7 @@
+About to move to a static analysis version. Big changes coming!
+
+----
+
 # Trumpasaurus - word usage analysis of political speeches
 
 ## Motivation
@@ -22,16 +26,12 @@ python -m SimpleHTTPServer
 
 And connect with your web browser: http://0.0.0.0:8000/trumpasaurus/
 
+There's also a [Greasemonkey script](https://deanturpin.github.io/greasemonkey/).
+
 ## Testing
 
-Tested this on recent Firefox, Safari and Chrome on the desktop. Chrome and
-Safari on iPhone.
-
-## Greasemonkey/Tampermonkey script
-
-Install [the script](trumpy.user.js).
-
-I prefer Tampermonkey/Chrome but either is fine. This script only runs on the [British Polical Speech website](http://www.britishpoliticalspeech.org/speech-archive.htm?speech=364).
+Tested on recent Firefox, Safari and Chrome on the desktop. Chrome and Safari on
+iPhone.
 
 ## Adding a new speech
 
